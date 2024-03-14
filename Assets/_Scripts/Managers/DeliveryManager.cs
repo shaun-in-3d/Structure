@@ -5,6 +5,7 @@ using UnityEngine;
 
 public enum teaTypes
 {
+    none,
     boba,
     green,
     english,
@@ -53,7 +54,7 @@ public class DeliveryManager : MonoBehaviour
     {
         Delivery d = new Delivery();
         d.location = GetHouse(Random.Range(0, houses.Count));
-        d.type = (teaTypes)Random.Range(0, teaTypeCount);
+        d.type = (teaTypes)(Random.Range(0, teaTypeCount)+1);
         d.time = time;
 
         return d;

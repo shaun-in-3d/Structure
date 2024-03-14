@@ -58,4 +58,16 @@ public class PlayerGame : MonoBehaviour
 
         currentOrder = newOrder;
     }
+
+    public bool takeTea(teaTypes type)
+    {
+        if(teaCarrying!=teaTypes.none)  //Already have tea
+        {
+            Debug.Log("Already got tea");
+            return false;
+        }
+        Debug.Log("Taken tea");
+        teaCarrying = type;
+        return true;
+    }
 }

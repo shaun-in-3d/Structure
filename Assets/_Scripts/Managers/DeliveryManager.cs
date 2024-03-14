@@ -62,6 +62,7 @@ public class DeliveryManager : MonoBehaviour
 
     public void giveTea(teaTypes type)
     {
-        //TODO: Get player script and call getTea
+        Debug.Log("Giving tea");
+        Player.GetComponent<PlayerGame>().takeTea(type);
     }
 }

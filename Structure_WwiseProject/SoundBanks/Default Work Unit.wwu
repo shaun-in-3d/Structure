@@ -1,6 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <WwiseDocument Type="WorkUnit" ID="{842C362C-1FD9-4C00-A588-8A0792948B6A}" SchemaVersion="110">
 	<SoundBanks>
-		<WorkUnit Name="Default Work Unit" ID="{842C362C-1FD9-4C00-A588-8A0792948B6A}" PersistMode="Standalone"/>
+		<WorkUnit Name="Default Work Unit" ID="{842C362C-1FD9-4C00-A588-8A0792948B6A}" PersistMode="Standalone">
+			<ChildrenList>
+				<SoundBank Name="Main" ID="{08DB10D1-7C50-4CCF-A361-7E5D4C990329}">
+					<ObjectInclusionList>
+						<ObjectRef Name="Cancel" ID="{54840BAA-4B1C-4258-8F43-474FF6E02734}" WorkUnitID="{68C0E71A-ABC6-473D-B1F6-B3555C4D4AC8}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Phone_Noti" ID="{888CB207-0626-460D-8F2C-B1E1E4FD2D8B}" WorkUnitID="{68C0E71A-ABC6-473D-B1F6-B3555C4D4AC8}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Confirm" ID="{E4A91881-92C4-4BEA-A14E-39CCE98FFE18}" WorkUnitID="{68C0E71A-ABC6-473D-B1F6-B3555C4D4AC8}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Game_Loss" ID="{0FD057A3-CB93-4D7F-B442-F7A75E596757}" WorkUnitID="{68C0E71A-ABC6-473D-B1F6-B3555C4D4AC8}" Origin="Manual" Filter="7"/>
+					</ObjectInclusionList>
+					<ObjectExclusionList/>
+					<GameSyncExclusionList/>
+				</SoundBank>
+			</ChildrenList>
+		</WorkUnit>
 	</SoundBanks>
 </WwiseDocument>

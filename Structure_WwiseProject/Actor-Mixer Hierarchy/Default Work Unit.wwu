@@ -1,6 +1,175 @@
 <?xml version="1.0" encoding="utf-8"?>
 <WwiseDocument Type="WorkUnit" ID="{11784964-2D62-43BD-932E-2A4540EB873E}" SchemaVersion="110">
 	<AudioObjects>
-		<WorkUnit Name="Default Work Unit" ID="{11784964-2D62-43BD-932E-2A4540EB873E}" PersistMode="Standalone"/>
+		<WorkUnit Name="Default Work Unit" ID="{11784964-2D62-43BD-932E-2A4540EB873E}" PersistMode="Standalone">
+			<ChildrenList>
+				<Sound Name="Cancel" ID="{B05B1ED6-A425-439A-A54E-6560734F255D}" ShortID="1072802069">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{07D68A21-32EE-4120-A2D1-11DBA5EACF5D}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{6550DA42-7E97-4239-A323-68E7C0764A42}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="Cancel" ID="{66DE16E8-6096-4082-8702-F3A9BCDE2E67}">
+							<Language>SFX</Language>
+							<AudioFile>Cancel.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="505449346"/>
+							</MediaIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="Cancel" ID="{66DE16E8-6096-4082-8702-F3A9BCDE2E67}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="Confirm" ID="{2520811D-1B83-442B-A078-1097C6A50322}" ShortID="511581032">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{07D68A21-32EE-4120-A2D1-11DBA5EACF5D}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{6550DA42-7E97-4239-A323-68E7C0764A42}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="Confirm" ID="{DFE854ED-A0CD-4E35-B401-24414D1C88E9}">
+							<Language>SFX</Language>
+							<AudioFile>Confirm.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="944901225"/>
+							</MediaIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="Confirm" ID="{DFE854ED-A0CD-4E35-B401-24414D1C88E9}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="Game_Loss" ID="{FA31CA2B-73C9-4072-9F8D-60BA6EA59390}" ShortID="528780290">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{07D68A21-32EE-4120-A2D1-11DBA5EACF5D}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{6550DA42-7E97-4239-A323-68E7C0764A42}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="Game_Loss" ID="{EA9EE00A-981D-4C0F-AF33-D8D59CAC6877}">
+							<Language>SFX</Language>
+							<AudioFile>Game_Loss.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="582261513"/>
+							</MediaIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="Game_Loss" ID="{EA9EE00A-981D-4C0F-AF33-D8D59CAC6877}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<RandomSequenceContainer Name="Phone_Noti" ID="{D51F653F-1BC9-4282-9A22-B1679B42F6D3}" ShortID="608544346">
+					<PropertyList>
+						<Property Name="Pitch" Type="int32">
+							<ModifierList>
+								<ModifierInfo>
+									<Modifier Name="" ID="{502CC454-ACC9-4C24-BADD-C106B63717D1}">
+										<PropertyList>
+											<Property Name="Enabled" Type="bool" Value="True"/>
+											<Property Name="Max" Type="Real64" Value="5"/>
+											<Property Name="Min" Type="Real64" Value="-5"/>
+										</PropertyList>
+									</Modifier>
+								</ModifierInfo>
+							</ModifierList>
+						</Property>
+						<Property Name="Volume" Type="Real64">
+							<ModifierList>
+								<ModifierInfo>
+									<Modifier Name="" ID="{3E528132-9E13-4FE1-8160-2B39CFFCB177}"/>
+								</ModifierInfo>
+							</ModifierList>
+						</Property>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{07D68A21-32EE-4120-A2D1-11DBA5EACF5D}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{6550DA42-7E97-4239-A323-68E7C0764A42}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<Sound Name="Phone_Noti_1" ID="{5DE0B621-E48E-41EC-8D4E-FC49000D60CC}" ShortID="84436518">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{07D68A21-32EE-4120-A2D1-11DBA5EACF5D}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{6550DA42-7E97-4239-A323-68E7C0764A42}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Phone_Noti_1" ID="{09D74110-BB31-41AE-82FA-10DF04265ECD}">
+									<Language>SFX</Language>
+									<AudioFile>Phone_Noti_1.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="224799864"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="Phone_Noti_1" ID="{09D74110-BB31-41AE-82FA-10DF04265ECD}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="Phone_Noti_2" ID="{6EC8F177-6E70-4683-9291-0F31E32E92DA}" ShortID="324686300">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{07D68A21-32EE-4120-A2D1-11DBA5EACF5D}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{6550DA42-7E97-4239-A323-68E7C0764A42}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Phone_Noti_2" ID="{22D8886F-A96D-48E2-ABA8-D750FCBE1760}">
+									<Language>SFX</Language>
+									<AudioFile>Phone_Noti_2.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="522958349"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="Phone_Noti_2" ID="{22D8886F-A96D-48E2-ABA8-D750FCBE1760}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="Phone_Noti_3" ID="{E8C6263D-13D1-4060-8906-EE5D228F3FB7}" ShortID="546250423">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{07D68A21-32EE-4120-A2D1-11DBA5EACF5D}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{6550DA42-7E97-4239-A323-68E7C0764A42}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Phone_Noti_3" ID="{D3394BE0-7F23-4CC0-9394-28B04B14BD1A}">
+									<Language>SFX</Language>
+									<AudioFile>Phone_Noti_3.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="604199362"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="Phone_Noti_3" ID="{D3394BE0-7F23-4CC0-9394-28B04B14BD1A}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+					</ChildrenList>
+				</RandomSequenceContainer>
+			</ChildrenList>
+		</WorkUnit>
 	</AudioObjects>
 </WwiseDocument>

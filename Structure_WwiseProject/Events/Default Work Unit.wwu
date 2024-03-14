@@ -1,6 +1,54 @@
 <?xml version="1.0" encoding="utf-8"?>
 <WwiseDocument Type="WorkUnit" ID="{68C0E71A-ABC6-473D-B1F6-B3555C4D4AC8}" SchemaVersion="110">
 	<Events>
-		<WorkUnit Name="Default Work Unit" ID="{68C0E71A-ABC6-473D-B1F6-B3555C4D4AC8}" PersistMode="Standalone"/>
+		<WorkUnit Name="Default Work Unit" ID="{68C0E71A-ABC6-473D-B1F6-B3555C4D4AC8}" PersistMode="Standalone">
+			<ChildrenList>
+				<Event Name="Cancel" ID="{54840BAA-4B1C-4258-8F43-474FF6E02734}">
+					<ChildrenList>
+						<Action Name="" ID="{F8A7BE6B-B526-4E94-B6E6-E6AF9692938E}" ShortID="15654229">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Cancel" ID="{B05B1ED6-A425-439A-A54E-6560734F255D}" WorkUnitID="{11784964-2D62-43BD-932E-2A4540EB873E}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Confirm" ID="{E4A91881-92C4-4BEA-A14E-39CCE98FFE18}">
+					<ChildrenList>
+						<Action Name="" ID="{1B39F13B-FBC2-41B8-95DD-4C3CAE3B74BE}" ShortID="306276378">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Confirm" ID="{2520811D-1B83-442B-A078-1097C6A50322}" WorkUnitID="{11784964-2D62-43BD-932E-2A4540EB873E}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Game_Loss" ID="{0FD057A3-CB93-4D7F-B442-F7A75E596757}">
+					<ChildrenList>
+						<Action Name="" ID="{C9F52C80-6F99-435E-9B28-ADFBE81F0B27}" ShortID="331341314">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Game_Loss" ID="{FA31CA2B-73C9-4072-9F8D-60BA6EA59390}" WorkUnitID="{11784964-2D62-43BD-932E-2A4540EB873E}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Phone_Noti" ID="{888CB207-0626-460D-8F2C-B1E1E4FD2D8B}">
+					<ChildrenList>
+						<Action Name="" ID="{58E67960-99D0-469C-A275-EA0ABDC329D7}" ShortID="406875526">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Phone_Noti" ID="{D51F653F-1BC9-4282-9A22-B1679B42F6D3}" WorkUnitID="{11784964-2D62-43BD-932E-2A4540EB873E}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="New_Event" ID="{524C8559-6594-4F8A-AFEB-F59C269C4085}"/>
+			</ChildrenList>
+		</WorkUnit>
 	</Events>
 </WwiseDocument>

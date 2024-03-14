@@ -15,10 +15,15 @@ public class PlayerGame : MonoBehaviour
 
     private void Awake()
     {
-        currentOrder = new Delivery();
-        currentOrder.type = teaTypes.english;
-        currentOrder = manager.createDelivery(120);
+        currentOrder = manager.createDelivery(120,null);
+        currentOrder.location.script.enableHouse();
     }
+
+    public Delivery getCurrentDelivery()
+    {
+        return currentOrder;
+    }
+    
 
     public void eatTea()
     {
@@ -43,7 +48,7 @@ public class PlayerGame : MonoBehaviour
 
         if(currentOrder.type!=teaCarrying)  //Carrying the wrong tea
         {
-            Debug.Log((int)currentOrder.type);
+            Debug.Log("Wrong order");
             //TODO: Add code for NPC telling player they're order is wrong
 
             strikes--;
@@ -60,6 +65,7 @@ public class PlayerGame : MonoBehaviour
         }
 
         currentOrder.location.script.disableHouse();
+        newOrder.location.script.enableHouse();
         currentOrder = newOrder;
 
         teaCarrying = teaTypes.none;
@@ -74,6 +80,7 @@ public class PlayerGame : MonoBehaviour
         }
 
         currentOrder.location.script.disableHouse();
+        newOrder.location.script.enableHouse();
         currentOrder = newOrder;
     }
 

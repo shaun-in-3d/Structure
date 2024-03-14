@@ -1,3 +1,5 @@
+using JetBrains.Annotations;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
@@ -19,7 +21,19 @@ public struct House
 {
     public Vector2 position;
     public HouseDeliveryScript script;
+
+    public static bool operator ==( House a, House b )
+    {
+        return a.position == b.position && a.script==b.script;
+    }
+
+    public static bool operator!=(House a, House b)
+    {
+        return !(a == b);
+    }
+
 };
+
 
 public struct TeaShop
 {
@@ -38,8 +52,8 @@ public struct Delivery
 public class DeliveryManager : MonoBehaviour
 {
     private const int teaTypeCount = 6;
-    [SerializeField] private List<House> houses = new List<House>();
-    [SerializeField] private List<TeaShop> shops = new List<TeaShop>();
+    public List<House> houses = new List<House>();
+    private List<TeaShop> shops = new List<TeaShop>();
 
     [SerializeField] private PlayerGame Player;
     public void addHouse(House house)   //called in house construction. So it can be delivered to
@@ -57,15 +71,12 @@ public class DeliveryManager : MonoBehaviour
         addHouse(h);
     }
 
-
-
-    private void FixedUpdate()
+    public House GetHouse(int index) 
     {
-        //Debug.Log(houses.Count);
+        return houses[index];
     }
 
-
-    public House GetHouse(int index) 
+    public House getHouseFunction(int index)
     {
         return houses[index];
     }
@@ -75,14 +86,25 @@ public class DeliveryManager : MonoBehaviour
         return shops[index];
     }
 
-    public Delivery createDelivery(float time)  //Create new delivery struct and return it, time is passed in to allow it to become either fixed, or calculated
+    public Delivery createDelivery(float time, House? houseToAvoid)  //Create new delivery struct and return it, time is passed in to allow it to become either fixed, or calculated
     {
         Delivery d = new Delivery();
-        d.location = GetHouse(Random.Range(0, houses.Count));
-        d.type = (teaTypes)(Random.Range(0, teaTypeCount)+1);
+
+        int num = UnityEngine.Random.Range(0, houses.Count + (houseToAvoid==null?0:-1));  //Get next house, out of all houses except one currently at, unless house currently at is null
+        if (houses[num] == houseToAvoid)
+        {
+            num++;
+        }
+        
+        
+
+        d.location = houses[num];
+        d.type = (teaTypes)(UnityEngine.Random.Range(0, teaTypeCount)+1);
         d.time = time;
 
-        d.location.script.enableHouse();
+        Debug.Log("House count"+houses.Count);
+
+        //d.location.script.enableHouse();
 
         Debug.Log("Deliver tea "+d.type+" to house");
 
@@ -97,6 +119,6 @@ public class DeliveryManager : MonoBehaviour
     public void completeDelivery()  //Complete delivery, to be called in house
     {
         const float time = 120; //Delay
-        Player.completeOrder(createDelivery(time));
+        Player.completeOrder(createDelivery(time,Player.getCurrentDelivery().location));
     }
 }

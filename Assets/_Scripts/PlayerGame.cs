@@ -6,6 +6,8 @@ using UnityEngine;
 public class PlayerGame : MonoBehaviour
 {
     [SerializeField] private int strikes = 3;
+    [SerializeField] private DeliveryManager manager;
+
     private Delivery currentOrder;
     private teaTypes teaCarrying = teaTypes.none;
     private int bitesLeft=0;
@@ -15,7 +17,9 @@ public class PlayerGame : MonoBehaviour
     {
         currentOrder = new Delivery();
         currentOrder.type = teaTypes.english;
+        currentOrder = manager.createDelivery(120);
     }
+
     public void eatTea()
     {
         if(teaCarrying==teaTypes.none)  //No tea to eat
@@ -55,7 +59,9 @@ public class PlayerGame : MonoBehaviour
             Debug.Log("Right order");
         }
 
+        currentOrder.location.script.disableHouse();
         currentOrder = newOrder;
+
         teaCarrying = teaTypes.none;
     }
 
@@ -66,8 +72,8 @@ public class PlayerGame : MonoBehaviour
         {
             //TODO: Add code for losing
         }
-        
 
+        currentOrder.location.script.disableHouse();
         currentOrder = newOrder;
     }
 

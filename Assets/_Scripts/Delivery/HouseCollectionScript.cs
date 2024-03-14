@@ -4,15 +4,13 @@ using UnityEngine;
 
 public class HouseCollectionScript : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] private DeliveryManager delivery;
+    private void OnTriggerEnter(Collider other)
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        PlayerGame player = other.GetComponent<PlayerGame>();
+        if (player)
+        {
+            delivery.completeDelivery();
+        }
     }
 }

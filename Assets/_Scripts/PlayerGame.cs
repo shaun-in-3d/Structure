@@ -10,6 +10,12 @@ public class PlayerGame : MonoBehaviour
     private teaTypes teaCarrying = teaTypes.none;
     private int bitesLeft=0;
 
+
+    private void Awake()
+    {
+        currentOrder = new Delivery();
+        currentOrder.type = teaTypes.english;
+    }
     public void eatTea()
     {
         if(teaCarrying==teaTypes.none)  //No tea to eat
@@ -33,6 +39,7 @@ public class PlayerGame : MonoBehaviour
 
         if(currentOrder.type!=teaCarrying)  //Carrying the wrong tea
         {
+            Debug.Log((int)currentOrder.type);
             //TODO: Add code for NPC telling player they're order is wrong
 
             strikes--;
@@ -43,8 +50,13 @@ public class PlayerGame : MonoBehaviour
             }
 
         }
+        else
+        {
+            Debug.Log("Right order");
+        }
 
         currentOrder = newOrder;
+        teaCarrying = teaTypes.none;
     }
 
     public void failOrder(Delivery newOrder)

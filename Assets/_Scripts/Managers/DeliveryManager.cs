@@ -38,7 +38,8 @@ public class DeliveryManager : MonoBehaviour
     private const int teaTypeCount = 6;
     [SerializeField] private List<House> houses;
     [SerializeField] private List<TeaShop> shops;
-    [SerializeField] private GameObject Player;
+
+    [SerializeField] private PlayerGame Player;
 
     public House GetHouse(int index) 
     {
@@ -53,15 +54,22 @@ public class DeliveryManager : MonoBehaviour
     public Delivery createDelivery(float time)  //Create new delivery struct and return it, time is passed in to allow it to become either fixed, or calculated
     {
         Delivery d = new Delivery();
-        d.location = GetHouse(Random.Range(0, houses.Count));
-        d.type = (teaTypes)(Random.Range(0, teaTypeCount)+1);
-        d.time = time;
+        //d.location = GetHouse(Random.Range(0, houses.Count));
+        //d.type = (teaTypes)(Random.Range(0, teaTypeCount)+1);
+        d.type = teaTypes.english;
+       // d.time = time;
 
         return d;
     }
 
     public void giveTea(teaTypes type)
     {
-        Player.GetComponent<PlayerGame>().takeTea(type);
+        Player.takeTea(type);
+    }
+
+    public void completeDelivery()  //Complete delivery, to be called in house
+    {
+        const float time = 120; //Delay
+        Player.completeOrder(createDelivery(time));
     }
 }

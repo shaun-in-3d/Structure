@@ -1,6 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
 <WwiseDocument Type="WorkUnit" ID="{68C0E71A-ABC6-473D-B1F6-B3555C4D4AC8}" SchemaVersion="110">
 	<Events>
-		<WorkUnit Name="Default Work Unit" ID="{68C0E71A-ABC6-473D-B1F6-B3555C4D4AC8}" PersistMode="Standalone"/>
+		<WorkUnit Name="Default Work Unit" ID="{68C0E71A-ABC6-473D-B1F6-B3555C4D4AC8}" PersistMode="Standalone">
+			<ChildrenList>
+				<Event Name="Cancel" ID="{54840BAA-4B1C-4258-8F43-474FF6E02734}">
+					<ChildrenList>
+						<Action Name="" ID="{F8A7BE6B-B526-4E94-B6E6-E6AF9692938E}" ShortID="15654229">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Cancel" ID="{B05B1ED6-A425-439A-A54E-6560734F255D}" WorkUnitID="{11784964-2D62-43BD-932E-2A4540EB873E}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Confirm" ID="{E4A91881-92C4-4BEA-A14E-39CCE98FFE18}">
+					<ChildrenList>
+						<Action Name="" ID="{1B39F13B-FBC2-41B8-95DD-4C3CAE3B74BE}" ShortID="306276378">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Confirm" ID="{2520811D-1B83-442B-A078-1097C6A50322}" WorkUnitID="{11784964-2D62-43BD-932E-2A4540EB873E}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+			</ChildrenList>
+		</WorkUnit>
 	</Events>
 </WwiseDocument>

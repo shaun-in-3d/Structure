@@ -1,0 +1,8 @@
+Event	ID	Name			Wwise Object Path	Notes
+	1517537939	Confirm			\Default Work Unit\Confirm	
+	2760337059	Cancel			\Default Work Unit\Cancel	
+
+In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
+	505449346	Cancel	C:\Users\flynn\GitHub\Structure\Structure_WwiseProject\.cache\Mac\SFX\Cancel_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Cancel		137312
+	944901225	Confirm	C:\Users\flynn\GitHub\Structure\Structure_WwiseProject\.cache\Mac\SFX\Confirm_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Confirm		140384
+

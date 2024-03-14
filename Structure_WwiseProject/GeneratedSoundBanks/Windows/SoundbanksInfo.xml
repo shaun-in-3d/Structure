@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SoundBanksInfo Platform="Windows" BasePlatform="Windows" SchemaVersion="16" SoundBankVersion="145">
+	<RootPaths>
+		<ProjectRoot>../..</ProjectRoot>
+		<SourceFilesRoot>../../.cache/Windows</SourceFilesRoot>
+		<SoundBanksRoot>.</SoundBanksRoot>
+		<ExternalSourcesInputFile></ExternalSourcesInputFile>
+		<ExternalSourcesOutputRoot>.</ExternalSourcesOutputRoot>
+	</RootPaths>
+	<DialogueEvents/>
+	<SoundBanks>
+		<SoundBank Id="1355168291" Type="User" Language="SFX" Hash="{986487A9-2683-E47A-8688-3D0FE6FDB954}">
+			<ShortName>Init</ShortName>
+			<Path>Init.bnk</Path>
+			<Plugins>
+				<AudioDevices>
+					<Plugin Id="2317455096" Name="No_Output" LibName="No Output" LibId="11862023"/>
+					<Plugin Id="3859886410" Name="System" LibName="System" LibId="11403271"/>
+				</AudioDevices>
+			</Plugins>
+			<Busses>
+				<Bus Id="3803692087" Name="Master Audio Bus"/>
+			</Busses>
+		</SoundBank>
+		<SoundBank Id="3161908922" Type="User" Language="SFX" Hash="{1C284980-D8B1-AFDE-E1C3-8E3D0083DE05}">
+			<ShortName>Main</ShortName>
+			<Path>Main.bnk</Path>
+			<Media>
+				<File Id="505449346" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Cancel.wav</ShortName>
+					<CachePath>SFX/Cancel_10C4C929.wem</CachePath>
+				</File>
+				<File Id="944901225" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Confirm.wav</ShortName>
+					<CachePath>SFX/Confirm_10C4C929.wem</CachePath>
+				</File>
+			</Media>
+			<Events>
+				<Event Id="2760337059" Name="Cancel" DurationType="OneShot" DurationMin="0.71466666" DurationMax="0.71466666">
+					<MediaRefs>
+						<MediaRef Id="505449346"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="1517537939" Name="Confirm" DurationType="OneShot" DurationMin="0.73066664" DurationMax="0.73066664">
+					<MediaRefs>
+						<MediaRef Id="944901225"/>
+					</MediaRefs>
+				</Event>
+			</Events>
+		</SoundBank>
+	</SoundBanks>
+	<FileHash>{9F446498-D712-26BB-8645-DF01B8F0EEA2}</FileHash>
+</SoundBanksInfo>

@@ -9,64 +9,101 @@ public class PlayerMovement : MonoBehaviour
     public float jumpForce = 15f;
 
     private Rigidbody2D rb;
-    private Vector2 moveVector;
+    private Vector2 moveInput;
     private bool isJumping = false;
 
-    // No need for a custom input class variable anymore.
+    private CustomInput input = null;
+    private Vector2 moveVector = Vector2.zero;
+        
+    private PlayerInput playerInput;
     
     private void Awake()
     {
+        input = new CustomInput();
         rb = GetComponent<Rigidbody2D>();
+        playerInput = GetComponent<PlayerInput>();
     }
-    
-    // Input System's PlayerInput component handles enabling/disabling input,
-    // so OnEnable and OnDisable are not needed for input handling anymore.
 
-    public void OnMovement(InputAction.CallbackContext context)
+    private void Start()
     {
-        moveVector = context.ReadValue<Vector2>();
+        int index = playerInput.playerIndex;
     }
     
-    public void OnJump(InputAction.CallbackContext context)
+    private void OnEnable()
     {
-        if (context.performed && IsGrounded())
-        {
+        input.Enable();
+        input.Player.Movement.performed += OnMovementPerformed;
+        input.Player.Movement.canceled += OnMovementCancelled;
+        input.Player.Jump.performed += OnJump; // Registering the jump action
+    }
+    
+    private void OnDisable()
+    {
+        input.Disable();
+        input.Player.Movement.performed -= OnMovementPerformed;
+        input.Player.Movement.canceled -= OnMovementCancelled;
+        input.Player.Jump.performed -= OnJump; // Unregistering the jump action
+    }
+    
+
+    public void OnMovementPerformed(InputAction.CallbackContext value)
+    {
+        moveVector = value.ReadValue<Vector2>();
+    }
+    
+    private void OnMovementCancelled(InputAction.CallbackContext value)
+    {
+        moveVector = Vector2.zero;
+    }
+    
+    public void OnJump(InputAction.CallbackContext context) {
+        if (context.performed && IsGrounded()) {
             isJumping = true;
         }
     }
 
     private void FixedUpdate()
     {
+        //Debug.Log(moveVector);
         Move();
-        if (isJumping)
-        {
+        
+        if (isJumping) {
             Jump();
         }
     }
-
+        
+    
+    
     private void Move()
     {
-        // Apply movement
-        float xForce = moveVector.x * moveSpeed;
-        rb.velocity = new Vector2(xForce, rb.velocity.y); // Changed to set velocity directly for more consistent movement
+        
+        float xForce = moveVector.x * moveSpeed; // Extract X from moveVector
+
+        rb.AddForce(new Vector2(xForce, 0f), ForceMode2D.Force);        // Apply x force
     }
+
 
     private void Jump()
     {
+        // Only allow the player to jump if they're on the ground
         if (IsGrounded())
         {
             rb.AddForce(new Vector2(0f, jumpForce), ForceMode2D.Impulse);
         }
-        isJumping = false; // Reset jumping state
+        isJumping = false; // Reset jump statuss until the next jump input
     }
 
-    public float groundCheckRadius = 0.2f;
-    public LayerMask groundLayer;
+    
+ 
+    public float groundCheckRadius = 0.2f; // Radius of the circle used for ground detection
+    public LayerMask groundLayer; // Layer used to identify the ground. Make sure to assign this in the Unity Editor.
 
-    private bool IsGrounded()
-    {
+
+    private bool IsGrounded() {
         Vector2 position = new Vector2(transform.position.x, transform.position.y - groundCheckRadius);
+        
         Collider2D hit = Physics2D.OverlapCircle(position, groundCheckRadius, groundLayer);
+        
         return hit != null;
     }
 
@@ -76,4 +113,5 @@ public class PlayerMovement : MonoBehaviour
         Vector2 position = new Vector2(transform.position.x, transform.position.y - groundCheckRadius);
         Gizmos.DrawWireSphere(position, groundCheckRadius);
     }
+
 }

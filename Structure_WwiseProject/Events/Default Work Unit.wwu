@@ -25,6 +25,29 @@
 						</Action>
 					</ChildrenList>
 				</Event>
+				<Event Name="Game_Loss" ID="{0FD057A3-CB93-4D7F-B442-F7A75E596757}">
+					<ChildrenList>
+						<Action Name="" ID="{C9F52C80-6F99-435E-9B28-ADFBE81F0B27}" ShortID="331341314">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Game_Loss" ID="{FA31CA2B-73C9-4072-9F8D-60BA6EA59390}" WorkUnitID="{11784964-2D62-43BD-932E-2A4540EB873E}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Phone_Noti" ID="{888CB207-0626-460D-8F2C-B1E1E4FD2D8B}">
+					<ChildrenList>
+						<Action Name="" ID="{58E67960-99D0-469C-A275-EA0ABDC329D7}" ShortID="406875526">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Phone_Noti" ID="{D51F653F-1BC9-4282-9A22-B1679B42F6D3}" WorkUnitID="{11784964-2D62-43BD-932E-2A4540EB873E}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="New_Event" ID="{524C8559-6594-4F8A-AFEB-F59C269C4085}"/>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>

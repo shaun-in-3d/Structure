@@ -15,7 +15,42 @@ namespace AK
     {
         static const AkUniqueID CANCEL = 2760337059U;
         static const AkUniqueID CONFIRM = 1517537939U;
+        static const AkUniqueID GAME_LOSS = 3425053579U;
+        static const AkUniqueID PHONE_NOTI = 3042867002U;
     } // namespace EVENTS
+
+    namespace STATES
+    {
+        namespace MUSIC
+        {
+            static const AkUniqueID GROUP = 3991942870U;
+
+            namespace STATE
+            {
+                static const AkUniqueID INTENSE_THEME = 3106041415U;
+                static const AkUniqueID MAIN_THEME = 2557777556U;
+                static const AkUniqueID MENU = 2607556080U;
+                static const AkUniqueID NONE = 748895195U;
+            } // namespace STATE
+        } // namespace MUSIC
+
+    } // namespace STATES
+
+    namespace SWITCHES
+    {
+        namespace BIKE_SURFACE
+        {
+            static const AkUniqueID GROUP = 901759366U;
+
+            namespace SWITCH
+            {
+                static const AkUniqueID GRASS = 4248645337U;
+                static const AkUniqueID PAVEMENT = 2830102203U;
+                static const AkUniqueID ROAD = 2110808655U;
+            } // namespace SWITCH
+        } // namespace BIKE_SURFACE
+
+    } // namespace SWITCHES
 
     namespace BANKS
     {

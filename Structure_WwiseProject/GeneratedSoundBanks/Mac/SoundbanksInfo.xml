@@ -9,7 +9,7 @@
 	</RootPaths>
 	<DialogueEvents/>
 	<SoundBanks>
-		<SoundBank Id="1355168291" Type="User" Language="SFX" Hash="{F56A610C-C7C4-F874-B68B-7ADDF94EBB7A}">
+		<SoundBank Id="1355168291" Type="User" Language="SFX" Hash="{220D8DDF-51D3-73D1-2A55-6142DBC7DB26}">
 			<ShortName>Init</ShortName>
 			<Path>Init.bnk</Path>
 			<Plugins>
@@ -21,14 +21,49 @@
 			<Busses>
 				<Bus Id="3803692087" Name="Master Audio Bus"/>
 			</Busses>
+			<StateGroups>
+				<StateGroup Id="3991942870" Name="Music">
+					<States>
+						<State Id="748895195" Name="None"/>
+						<State Id="2557777556" Name="Main_Theme"/>
+						<State Id="2607556080" Name="Menu"/>
+						<State Id="3106041415" Name="Intense_Theme"/>
+					</States>
+				</StateGroup>
+			</StateGroups>
+			<SwitchGroups>
+				<SwitchGroup Id="901759366" Name="Bike_Surface">
+					<Switches>
+						<Switch Id="2110808655" Name="Road"/>
+						<Switch Id="2830102203" Name="Pavement"/>
+						<Switch Id="4248645337" Name="Grass"/>
+					</Switches>
+				</SwitchGroup>
+			</SwitchGroups>
 		</SoundBank>
-		<SoundBank Id="3161908922" Type="User" Language="SFX" Hash="{1C284980-D8B1-AFDE-E1C3-8E3D0083DE05}">
+		<SoundBank Id="3161908922" Type="User" Language="SFX" Hash="{E339167C-CD95-569D-1CA8-A192FD598AE7}">
 			<ShortName>Main</ShortName>
 			<Path>Main.bnk</Path>
 			<Media>
+				<File Id="224799864" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Phone_Noti_1.wav</ShortName>
+					<CachePath>SFX/Phone_Noti_1_10C4C929.wem</CachePath>
+				</File>
 				<File Id="505449346" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Cancel.wav</ShortName>
 					<CachePath>SFX/Cancel_10C4C929.wem</CachePath>
+				</File>
+				<File Id="522958349" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Phone_Noti_2.wav</ShortName>
+					<CachePath>SFX/Phone_Noti_2_10C4C929.wem</CachePath>
+				</File>
+				<File Id="582261513" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Game_Loss.wav</ShortName>
+					<CachePath>SFX/Game_Loss_10C4C929.wem</CachePath>
+				</File>
+				<File Id="604199362" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Phone_Noti_3.wav</ShortName>
+					<CachePath>SFX/Phone_Noti_3_10C4C929.wem</CachePath>
 				</File>
 				<File Id="944901225" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Confirm.wav</ShortName>
@@ -46,8 +81,20 @@
 						<MediaRef Id="944901225"/>
 					</MediaRefs>
 				</Event>
+				<Event Id="3425053579" Name="Game_Loss" DurationType="OneShot" DurationMin="2.512" DurationMax="2.512">
+					<MediaRefs>
+						<MediaRef Id="582261513"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="3042867002" Name="Phone_Noti" DurationType="OneShot" DurationMin="1.2550367" DurationMax="1.2783533">
+					<MediaRefs>
+						<MediaRef Id="224799864"/>
+						<MediaRef Id="522958349"/>
+						<MediaRef Id="604199362"/>
+					</MediaRefs>
+				</Event>
 			</Events>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{32EADD55-BACD-95C5-94CF-27DDCA92AD40}</FileHash>
+	<FileHash>{5073631D-9B35-80C4-0DB4-B87B23330B9F}</FileHash>
 </SoundBanksInfo>

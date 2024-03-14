@@ -1,8 +1,14 @@
 Event	ID	Name			Wwise Object Path	Notes
 	1517537939	Confirm			\Default Work Unit\Confirm	
 	2760337059	Cancel			\Default Work Unit\Cancel	
+	3042867002	Phone_Noti			\Default Work Unit\Phone_Noti	
+	3425053579	Game_Loss			\Default Work Unit\Game_Loss	
 
 In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
+	224799864	Phone_Noti_1	C:\Users\flynn\GitHub\Structure\Structure_WwiseProject\.cache\Mac\SFX\Phone_Noti_1_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Phone_Noti\Phone_Noti_1		242784
 	505449346	Cancel	C:\Users\flynn\GitHub\Structure\Structure_WwiseProject\.cache\Mac\SFX\Cancel_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Cancel		137312
+	522958349	Phone_Noti_2	C:\Users\flynn\GitHub\Structure\Structure_WwiseProject\.cache\Mac\SFX\Phone_Noti_2_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Phone_Noti\Phone_Noti_2		241760
+	582261513	Game_Loss	C:\Users\flynn\GitHub\Structure\Structure_WwiseProject\.cache\Mac\SFX\Game_Loss_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Game_Loss		482400
+	604199362	Phone_Noti_3	C:\Users\flynn\GitHub\Structure\Structure_WwiseProject\.cache\Mac\SFX\Phone_Noti_3_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Phone_Noti\Phone_Noti_3		244832
 	944901225	Confirm	C:\Users\flynn\GitHub\Structure\Structure_WwiseProject\.cache\Mac\SFX\Confirm_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Confirm		140384
 

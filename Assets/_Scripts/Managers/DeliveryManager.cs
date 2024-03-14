@@ -62,7 +62,6 @@ public class DeliveryManager : MonoBehaviour
 
     public void giveTea(teaTypes type)
     {
-        Debug.Log("Giving tea");
         Player.GetComponent<PlayerGame>().takeTea(type);
     }
 }

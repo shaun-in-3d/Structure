@@ -58,4 +58,9 @@ public class DeliveryManager : MonoBehaviour
 
         return d;
     }
+
+    public void giveTea(teaTypes type)
+    {
+        //TODO: Get player script and call getTea
+    }
 }

@@ -6,9 +6,19 @@ using UnityEngine;
 public class PlayerGame : MonoBehaviour
 {
     [SerializeField] private int strikes = 3;
+    [SerializeField] private DeliveryManager manager;
+
     private Delivery currentOrder;
     private teaTypes teaCarrying = teaTypes.none;
     private int bitesLeft=0;
+
+
+    private void Awake()
+    {
+        currentOrder = new Delivery();
+        currentOrder.type = teaTypes.english;
+        currentOrder = manager.createDelivery(120);
+    }
 
     public void eatTea()
     {
@@ -33,6 +43,7 @@ public class PlayerGame : MonoBehaviour
 
         if(currentOrder.type!=teaCarrying)  //Carrying the wrong tea
         {
+            Debug.Log((int)currentOrder.type);
             //TODO: Add code for NPC telling player they're order is wrong
 
             strikes--;
@@ -43,8 +54,15 @@ public class PlayerGame : MonoBehaviour
             }
 
         }
+        else
+        {
+            Debug.Log("Right order");
+        }
 
+        currentOrder.location.script.disableHouse();
         currentOrder = newOrder;
+
+        teaCarrying = teaTypes.none;
     }
 
     public void failOrder(Delivery newOrder)
@@ -54,8 +72,8 @@ public class PlayerGame : MonoBehaviour
         {
             //TODO: Add code for losing
         }
-        
 
+        currentOrder.location.script.disableHouse();
         currentOrder = newOrder;
     }
 
@@ -63,10 +81,8 @@ public class PlayerGame : MonoBehaviour
     {
         if(teaCarrying!=teaTypes.none)  //Already have tea
         {
-            Debug.Log("Already got tea");
             return false;
         }
-        Debug.Log("Taken tea");
         teaCarrying = type;
         return true;
     }

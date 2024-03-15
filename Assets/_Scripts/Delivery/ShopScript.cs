@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ShopScript : MonoBehaviour
 {
-    [SerializeField] private teaTypes type;
+    [SerializeField] public teaTypes type;
     [SerializeField] private DeliveryManager deliveryManager;
     private void OnTriggerStay(Collider other)
     {

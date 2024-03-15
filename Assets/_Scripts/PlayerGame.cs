@@ -7,16 +7,31 @@ public class PlayerGame : MonoBehaviour
 {
     [SerializeField] private int strikes = 3;
     [SerializeField] private DeliveryManager manager;
+    [SerializeField] private DirectionArrow arrow;
 
     private Delivery currentOrder;
     private teaTypes teaCarrying = teaTypes.none;
     private int bitesLeft=0;
+
+    private bool pointToHouse = false;
 
 
     private void Awake()
     {
         currentOrder = manager.createDelivery(5,null);
         currentOrder.location.script.enableHouse();
+    }
+
+    private void Update()
+    {
+        if(teaCarrying==currentOrder.type)
+        {
+            arrow.targetObject = currentOrder.location.script.gameObject.transform;
+        }
+        else
+        {
+            arrow.targetObject = manager.GetTeaShop(currentOrder.type).shop.transform;
+        }
     }
 
     public Delivery getCurrentDelivery()
@@ -70,9 +85,7 @@ public class PlayerGame : MonoBehaviour
             Debug.Log("Right order");
         }
 
-        currentOrder.location.script.disableHouse();
-        newOrder.location.script.enableHouse();
-        currentOrder = newOrder;
+        updateOrder(newOrder);
 
         teaCarrying = teaTypes.none;
     }
@@ -85,10 +98,20 @@ public class PlayerGame : MonoBehaviour
             //TODO: Add code for losing
         }
 
-        Debug.Log("Uh oh");
-        currentOrder.location.script.disableHouse();
+        Debug.Log("Delivery failed to make");
+        updateOrder(newOrder);
+    }
+
+    private void updateOrder(Delivery newOrder)
+    {
+        if(currentOrder.location.script!=null)
+        {
+            currentOrder.location.script.disableHouse();
+        }
+        
         newOrder.location.script.enableHouse();
         currentOrder = newOrder;
+        arrow.targetObject = newOrder.location.script.gameObject.transform;
     }
 
     public bool takeTea(teaTypes type)

@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Net.WebSockets;
@@ -6,6 +7,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.Profiling;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class PlayerGame : MonoBehaviour
 {
@@ -36,6 +38,36 @@ public class PlayerGame : MonoBehaviour
     private Rigidbody rb;
 
     public string[] teaNames = new string[5] { "Boba tea", "Green tea", "English tea", "Iced tea", "Microwave tea" };
+
+    [SerializeField] private Image teaImageDisplay; // Assign this in the Unity Editor
+
+    public void DisplayTeaImage(teaTypes teaType, int spriteNumber)
+    {
+        // Check if the teaType is none, and if so, set the Image to display no image
+        if (teaType == teaTypes.none)
+        {
+            if (teaImageDisplay != null)
+            {
+                teaImageDisplay.sprite = null; // Set to no image
+            }
+        }
+        else
+        {
+            // Cast the teaTypes enum to ImageName since they have the same underlying values
+            ImageName imageName = (ImageName)Enum.Parse(typeof(ImageName), teaType.ToString());
+
+            // Get the sprite from TeaImageManager
+            Sprite spriteToDisplay = TeaImageManager.Instance.GetSprite(imageName, spriteNumber);
+
+            // Set the sprite to the Image UI component
+            if (spriteToDisplay != null && teaImageDisplay != null)
+            {
+                teaImageDisplay.sprite = spriteToDisplay;
+            }
+        }
+    }
+
+
 
     private void Awake()
     {
@@ -109,6 +141,7 @@ public class PlayerGame : MonoBehaviour
         {
             teaCarrying= teaTypes.none; 
         }
+        DisplayTeaImage(teaCarrying, 2 - bitesLeft);
     }
 
 
@@ -182,6 +215,7 @@ public class PlayerGame : MonoBehaviour
         }
         teaCarrying = type;
         bitesLeft = 2;
+        DisplayTeaImage(teaCarrying, 2 - bitesLeft);
         return true;
     }
 

@@ -504,10 +504,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1813562755868367953, guid: 4bd72c7c1f3438144a0295e72ee68022, type: 3}
-      propertyPath: field of view
-      value: 67
-      objectReference: {fileID: 0}
     - target: {fileID: 2304328846353431001, guid: 4bd72c7c1f3438144a0295e72ee68022, type: 3}
       propertyPath: manager
       value: 

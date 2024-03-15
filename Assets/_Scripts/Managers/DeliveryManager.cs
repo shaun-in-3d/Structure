@@ -132,8 +132,6 @@ public class DeliveryManager : MonoBehaviour
         d.type = (teaTypes)(UnityEngine.Random.Range(0, teaTypeCount)+1);
         d.time = time;
 
-        Debug.Log("Deliver tea "+d.type+" to house");
-
         return d;
     }
 

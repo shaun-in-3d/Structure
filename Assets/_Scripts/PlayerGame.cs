@@ -1,7 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Net.WebSockets;
 using Unity.PlasticSCM.Editor.WebApi;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PlayerGame : MonoBehaviour
 {
@@ -13,17 +15,30 @@ public class PlayerGame : MonoBehaviour
     private teaTypes teaCarrying = teaTypes.none;
     private int bitesLeft=0;
 
-    private bool pointToHouse = false;
+    [SerializeField] private float staminaDrainRate=0.02f;
+    [SerializeField] private float staminaRegainRate = 0.05f;
+    [SerializeField] private float eatingStaminaRegain = 0.4f;
+    private float stamina = 1;
+
+    private PlayerInput playerInput;
+
+    Rigidbody rb;
 
 
     private void Awake()
     {
+        rb=GetComponent<Rigidbody>();
         currentOrder = manager.createDelivery(5,null);
         currentOrder.location.script.enableHouse();
+        playerInput=GetComponent<PlayerInput>();
+
+        playerInput.actions["Eat"].Enable();    //Add eat tea to the eat function
+        playerInput.actions["Eat"].started += eatTea;   
     }
 
     private void Update()
     {
+        //Update arrow
         if(teaCarrying==currentOrder.type)
         {
             arrow.targetObject = currentOrder.location.script.gameObject.transform;
@@ -32,6 +47,22 @@ public class PlayerGame : MonoBehaviour
         {
             arrow.targetObject = manager.GetTeaShop(currentOrder.type).shop.transform;
         }
+
+        //Update stamina
+        if(rb.velocity.sqrMagnitude<=0.02f)
+        {
+            stamina += staminaRegainRate * Time.deltaTime;
+        }
+        else
+        {
+            stamina -= staminaDrainRate * Time.deltaTime;
+        }
+
+        if(stamina<0)   //Lose if stamina hits 0
+        {
+            loseFunction(); 
+        }
+        
     }
 
     public Delivery getCurrentDelivery()
@@ -46,7 +77,7 @@ public class PlayerGame : MonoBehaviour
     }
     
 
-    public void eatTea()
+    public void eatTea(InputAction.CallbackContext context)
     {
         if(teaCarrying==teaTypes.none)  //No tea to eat
         {
@@ -54,6 +85,7 @@ public class PlayerGame : MonoBehaviour
         }
 
         bitesLeft -= 1;
+        stamina += eatingStaminaRegain;
         if(bitesLeft==0)
         {
             teaCarrying= teaTypes.none; 
@@ -76,7 +108,7 @@ public class PlayerGame : MonoBehaviour
 
             if(strikes==0)
             {
-                //TODO: Add code for losing
+                loseFunction();
             }
 
         }
@@ -95,7 +127,7 @@ public class PlayerGame : MonoBehaviour
         strikes--;
         if(strikes==0)
         {
-            //TODO: Add code for losing
+            loseFunction();
         }
 
         Debug.Log("Delivery failed to make");
@@ -122,5 +154,11 @@ public class PlayerGame : MonoBehaviour
         }
         teaCarrying = type;
         return true;
+    }
+
+    public void loseFunction()
+    {
+        //TODO: Add code for losing
+        Debug.Log("You lose!");
     }
 }

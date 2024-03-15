@@ -6,9 +6,30 @@ using UnityEngine;
 public class PlayerGame : MonoBehaviour
 {
     [SerializeField] private int strikes = 3;
+    [SerializeField] private DeliveryManager manager;
+
     private Delivery currentOrder;
     private teaTypes teaCarrying = teaTypes.none;
     private int bitesLeft=0;
+
+
+    private void Awake()
+    {
+        currentOrder = manager.createDelivery(5,null);
+        currentOrder.location.script.enableHouse();
+    }
+
+    public Delivery getCurrentDelivery()
+    {
+        return currentOrder;
+    }
+
+    public bool tickTimer(float deltaTime)  //Reduce the timer on the current order and return whether they have time left
+    {
+        currentOrder.time -= deltaTime;
+        return currentOrder.time > 0;
+    }
+    
 
     public void eatTea()
     {
@@ -33,6 +54,7 @@ public class PlayerGame : MonoBehaviour
 
         if(currentOrder.type!=teaCarrying)  //Carrying the wrong tea
         {
+            Debug.Log("Wrong order");
             //TODO: Add code for NPC telling player they're order is wrong
 
             strikes--;
@@ -43,8 +65,16 @@ public class PlayerGame : MonoBehaviour
             }
 
         }
+        else
+        {
+            Debug.Log("Right order");
+        }
 
+        currentOrder.location.script.disableHouse();
+        newOrder.location.script.enableHouse();
         currentOrder = newOrder;
+
+        teaCarrying = teaTypes.none;
     }
 
     public void failOrder(Delivery newOrder)
@@ -54,8 +84,10 @@ public class PlayerGame : MonoBehaviour
         {
             //TODO: Add code for losing
         }
-        
 
+        Debug.Log("Uh oh");
+        currentOrder.location.script.disableHouse();
+        newOrder.location.script.enableHouse();
         currentOrder = newOrder;
     }
 
@@ -63,10 +95,8 @@ public class PlayerGame : MonoBehaviour
     {
         if(teaCarrying!=teaTypes.none)  //Already have tea
         {
-            Debug.Log("Already got tea");
             return false;
         }
-        Debug.Log("Taken tea");
         teaCarrying = type;
         return true;
     }

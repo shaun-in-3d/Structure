@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{07A517EC-452D-49A1-96B3-C8E41B115E6D}" SchemaVersion="110">
+	<Switches>
+		<WorkUnit Name="Default Work Unit" ID="{07A517EC-452D-49A1-96B3-C8E41B115E6D}" PersistMode="Standalone">
+			<ChildrenList>
+				<SwitchGroup Name="Bike_Surface" ID="{544FD381-F683-4001-9E4A-A56CD6331F8B}">
+					<ChildrenList>
+						<Switch Name="Road" ID="{7DB2254D-00ED-48C0-B502-D79674375292}"/>
+						<Switch Name="Pavement" ID="{BC6357EF-AA2B-451D-828D-FE4AE676ED6D}"/>
+						<Switch Name="Grass" ID="{D11530F2-3562-415E-AFA7-646BC0588E22}"/>
+					</ChildrenList>
+				</SwitchGroup>
+			</ChildrenList>
+		</WorkUnit>
+	</Switches>
+</WwiseDocument>

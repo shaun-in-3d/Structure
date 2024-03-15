@@ -79,6 +79,24 @@ public class DeliveryManager : MonoBehaviour
         addHouse(h);
     }
 
+<<<<<<< Updated upstream
+=======
+    public void addTeaShop(TeaShop shop)
+    {
+        shops.Add(shop);
+    }
+
+    public void addTeaShop(GameObject shop,teaTypes type)
+    {
+        TeaShop s=new TeaShop();
+        s.shop = shop;
+        s.type = type;
+
+        addTeaShop(s);
+    }
+    
+
+>>>>>>> Stashed changes
     public House GetHouse(int index) 
     {
         return houses[index];

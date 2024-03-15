@@ -479,6 +479,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   strikes: 3
   manager: {fileID: 0}
+  arrow: {fileID: 7040930893872848392}
 --- !u!1 &6898105257376721400
 GameObject:
   m_ObjectHideFlags: 0

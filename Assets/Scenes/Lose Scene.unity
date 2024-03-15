@@ -504,10 +504,13 @@ RectTransform:
   - {fileID: 429445674}
   - {fileID: 527910162}
   - {fileID: 1854095892}
+<<<<<<< HEAD
 <<<<<<< Updated upstream
 =======
   - {fileID: 1878119784}
 >>>>>>> Stashed changes
+=======
+>>>>>>> parent of 35c664bf (Revert "Merge branch 'LoseScene'")
   m_Father: {fileID: 1657044942}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -3606,6 +3609,7 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1854095891}
   m_CullTransparentMesh: 1
+<<<<<<< HEAD
 <<<<<<< Updated upstream
 =======
 --- !u!1 &1878119783
@@ -3743,6 +3747,8 @@ CanvasRenderer:
   m_GameObject: {fileID: 1878119783}
   m_CullTransparentMesh: 1
 >>>>>>> Stashed changes
+=======
+>>>>>>> parent of 35c664bf (Revert "Merge branch 'LoseScene'")
 --- !u!1 &1885345277
 GameObject:
   m_ObjectHideFlags: 0

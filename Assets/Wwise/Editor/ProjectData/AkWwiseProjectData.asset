@@ -24,7 +24,11 @@ MonoBehaviour:
     ParentPath: Virtual Acoustics\Default Work Unit
     guid: 5614017604adaf4ca3328b1419055864
     GuidInternal: 
+<<<<<<< HEAD
     m_lastTime: -8584911743946085065
+=======
+    m_lastTime: -8584911097913033441
+>>>>>>> StaminaBar
     List: []
   AuxBusWwu:
   - PhysicalPath: Master-Mixer Hierarchy\Default Work Unit.wwu
@@ -38,7 +42,11 @@ MonoBehaviour:
     ParentPath: Master-Mixer Hierarchy\Default Work Unit
     guid: 42da5065977e3942a32368e7c0764a42
     GuidInternal: 
+<<<<<<< HEAD
     m_lastTime: -8584911007365126757
+=======
+    m_lastTime: -8584911097914998204
+>>>>>>> StaminaBar
     List:
     - name: Master Audio Bus
       guid: d8a41415a61d2a41a17e75ca0c2149f3
@@ -83,7 +91,11 @@ MonoBehaviour:
     ParentPath: SoundBanks\Default Work Unit
     guid: 2c362c84d91f004ca5888a0792948b6a
     GuidInternal: 
+<<<<<<< HEAD
     m_lastTime: -8584910978221271601
+=======
+    m_lastTime: -8584911097913721372
+>>>>>>> StaminaBar
     List:
     - name: Main
       guid: d110db08507ccf4ca3617e5d4c990329
@@ -111,7 +123,11 @@ MonoBehaviour:
     ParentPath: Events\Default Work Unit
     guid: 1ae7c068c6ab3d47b1f6b3555c4d4ac8
     GuidInternal: 
+<<<<<<< HEAD
     m_lastTime: -8584911011664130392
+=======
+    m_lastTime: -8584911097916145112
+>>>>>>> StaminaBar
     List:
     - name: Ambience_Birds
       guid: 555bd8db737cd84b9324edd8288838b6
@@ -295,7 +311,11 @@ MonoBehaviour:
     ParentPath: Game Parameters\Default Work Unit
     guid: 389f3bf244b0c74fb5e7ae856b8281c3
     GuidInternal: 
+<<<<<<< HEAD
     m_lastTime: -8584911743945609706
+=======
+    m_lastTime: -8584911097916105238
+>>>>>>> StaminaBar
     List: []
   StateWwu:
   - PhysicalPath: States\Default Work Unit.wwu
@@ -309,7 +329,11 @@ MonoBehaviour:
     ParentPath: States\Default Work Unit
     guid: 79afe8ec3bbadf49bfa62693dc543f03
     GuidInternal: 
+<<<<<<< HEAD
     m_lastTime: -8584911562450344524
+=======
+    m_lastTime: -8584911097913591948
+>>>>>>> StaminaBar
     List:
     - name: Music
       guid: 21de4903ea6eca458252f8594acdfaac
@@ -405,7 +429,11 @@ MonoBehaviour:
     ParentPath: Switches\Default Work Unit
     guid: ec17a5072d45a14996b3c8e41b115e6d
     GuidInternal: 
+<<<<<<< HEAD
     m_lastTime: -8584910978877046546
+=======
+    m_lastTime: -8584911097913183054
+>>>>>>> StaminaBar
     List:
     - name: Bike_Surface
       guid: 81d34f5483f601409e4aa56cd6331f8b
@@ -485,7 +513,11 @@ MonoBehaviour:
     ParentPath: Triggers\Default Work Unit
     guid: a11ae5aef2d8fc46858ace4dcf611b0a
     GuidInternal: 
+<<<<<<< HEAD
     m_lastTime: -8584911743946805610
+=======
+    m_lastTime: -8584911097913123184
+>>>>>>> StaminaBar
     List: []
   ExpandedFileSystemItemIds: 
   ExpandedWaapiItemIds: 

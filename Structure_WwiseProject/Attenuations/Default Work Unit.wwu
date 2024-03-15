@@ -4,6 +4,9 @@
 		<WorkUnit Name="Default Work Unit" ID="{DFE6B7E6-A491-430A-8505-E1B7683BE52F}" PersistMode="Standalone">
 			<ChildrenList>
 				<Attenuation Name="Ambience_Wind" ID="{8B0FDCBA-AAFA-4A44-948C-6D4D8ED7BC33}" ShortID="66147897">
+					<PropertyList>
+						<Property Name="RadiusMax" Type="Real64" Value="200"/>
+					</PropertyList>
 					<CurveUsageInfoList>
 						<VolumeDryUsage>
 							<CurveUsageInfo Platform="Linked" CurveToUse="Custom">
@@ -18,17 +21,17 @@
 											<Flags>5</Flags>
 										</Point>
 										<Point>
-											<XPos>79.72028</XPos>
+											<XPos>159.44056</XPos>
 											<YPos>-4.22874</YPos>
 											<Flags>0</Flags>
 										</Point>
 										<Point>
-											<XPos>92.3951</XPos>
+											<XPos>184.7902</XPos>
 											<YPos>-9.43562</YPos>
 											<Flags>0</Flags>
 										</Point>
 										<Point>
-											<XPos>100</XPos>
+											<XPos>200</XPos>
 											<YPos>-200</YPos>
 											<Flags>37</Flags>
 										</Point>
@@ -55,17 +58,17 @@
 											<Flags>5</Flags>
 										</Point>
 										<Point>
-											<XPos>80.24475</XPos>
+											<XPos>160.4895</XPos>
 											<YPos>13</YPos>
 											<Flags>0</Flags>
 										</Point>
 										<Point>
-											<XPos>93.18182</XPos>
+											<XPos>186.36364</XPos>
 											<YPos>45</YPos>
 											<Flags>0</Flags>
 										</Point>
 										<Point>
-											<XPos>100</XPos>
+											<XPos>200</XPos>
 											<YPos>100</YPos>
 											<Flags>37</Flags>
 										</Point>

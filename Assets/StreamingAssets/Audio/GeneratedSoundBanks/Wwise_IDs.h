@@ -22,6 +22,7 @@ namespace AK
         static const AkUniqueID CONFIRM = 1517537939U;
         static const AkUniqueID EAT_TEA = 3910981062U;
         static const AkUniqueID GAME_LOSS = 3425053579U;
+        static const AkUniqueID MUSIC = 3991942870U;
         static const AkUniqueID PHONE_NOTI = 3042867002U;
     } // namespace EVENTS
 

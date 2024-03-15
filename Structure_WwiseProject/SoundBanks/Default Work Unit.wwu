@@ -12,6 +12,7 @@
 						<ObjectRef Name="Bike_Surface" ID="{51037F5F-97BC-452A-8377-20CA2A666E76}" WorkUnitID="{68C0E71A-ABC6-473D-B1F6-B3555C4D4AC8}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Bike_Bell" ID="{77B0BB25-487C-4531-987E-A67C1540F870}" WorkUnitID="{68C0E71A-ABC6-473D-B1F6-B3555C4D4AC8}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Phone_Noti" ID="{888CB207-0626-460D-8F2C-B1E1E4FD2D8B}" WorkUnitID="{68C0E71A-ABC6-473D-B1F6-B3555C4D4AC8}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Music" ID="{6B262E8A-79B1-4B60-80E1-23FADE590BB4}" WorkUnitID="{68C0E71A-ABC6-473D-B1F6-B3555C4D4AC8}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Ambience_Birds" ID="{DBD85B55-7C73-4BD8-9324-EDD8288838B6}" WorkUnitID="{68C0E71A-ABC6-473D-B1F6-B3555C4D4AC8}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Confirm" ID="{E4A91881-92C4-4BEA-A14E-39CCE98FFE18}" WorkUnitID="{68C0E71A-ABC6-473D-B1F6-B3555C4D4AC8}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Game_Loss" ID="{0FD057A3-CB93-4D7F-B442-F7A75E596757}" WorkUnitID="{68C0E71A-ABC6-473D-B1F6-B3555C4D4AC8}" Origin="Manual" Filter="7"/>

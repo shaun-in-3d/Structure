@@ -16,6 +16,10 @@ public class PlayerGame : MonoBehaviour
 
     [SerializeField] public float timeForDelivery = 120;
 
+    [SerializeField] private HighScoreTransfer highScore;
+    private int teasDelivered;
+    private int teasEaten;
+
     private Delivery currentOrder;
     private teaTypes teaCarrying = teaTypes.none;
     private int bitesLeft=0;
@@ -44,6 +48,9 @@ public class PlayerGame : MonoBehaviour
         playerInput.actions["Eat"].started += eatTea;
 
         DialogueManager.Instance.ShowMessage("ExampleCharacter", "Order of " + teaNames[(int)currentOrder.type-1] + " to go to house");
+
+        teasDelivered = 0;
+        teasEaten = 0;
     }
 
     private void Update()
@@ -95,6 +102,7 @@ public class PlayerGame : MonoBehaviour
             return;
         }
         bitesLeft -= 1;
+        teasEaten++;
         stamina += eatingStaminaRegain;
         if(stamina>1){ stamina = 1; }   //Ensure stamina doesn't go above 1
         if(bitesLeft==0)
@@ -127,7 +135,7 @@ public class PlayerGame : MonoBehaviour
         }
         else
         {
-            Debug.Log("Right order");
+            teasDelivered++;
         }
 
         if (strikes == 0)
@@ -179,6 +187,10 @@ public class PlayerGame : MonoBehaviour
 
     public void loseFunction()
     {
+        dataToTransfer d = new dataToTransfer();
+        d.teaEaten = teasEaten;
+        d.deliveries = teasDelivered;
+        highScore.setData(d);
         SceneManager.LoadScene("Lose Scene");
     }
 

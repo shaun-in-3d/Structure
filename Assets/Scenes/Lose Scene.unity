@@ -3502,7 +3502,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 367, y: -44}
+  m_AnchoredPosition: {x: 263, y: -44}
   m_SizeDelta: {x: 246.62329, y: 72.7695}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1854095893
@@ -3525,7 +3525,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: You we're fired
+  m_text: You were fired
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: b7455d9ba223e8d42ac53d4f7a84a095, type: 2}
   m_sharedMaterial: {fileID: -8076666967317843075, guid: b7455d9ba223e8d42ac53d4f7a84a095, type: 2}

@@ -13,7 +13,6 @@ public enum teaTypes
     green,
     english,
     iced,
-    chai,
     microwave
 };
 
@@ -37,7 +36,7 @@ public struct House
 
 public struct TeaShop
 {
-    public Vector2 position;
+    public GameObject shop;
     public teaTypes type;
 };
 
@@ -51,9 +50,9 @@ public struct Delivery
 
 public class DeliveryManager : MonoBehaviour
 {
-    private const int teaTypeCount = 6;
+    private const int teaTypeCount = 5;
     public List<House> houses = new List<House>();
-    private List<TeaShop> shops = new List<TeaShop>();
+    public List<TeaShop> shops = new List<TeaShop>();
 
     private void Update()
     {
@@ -79,12 +78,21 @@ public class DeliveryManager : MonoBehaviour
         addHouse(h);
     }
 
-    public House GetHouse(int index) 
+    public void addTeaShop(TeaShop shop)
     {
-        return houses[index];
+        shops.Add(shop);
     }
 
-    public House getHouseFunction(int index)
+    public void addTeaShop(GameObject shop,teaTypes type)
+    {
+        TeaShop s=new TeaShop();
+        s.shop = shop;
+        s.type = type;
+
+        addTeaShop(s);
+    }
+
+    public House GetHouse(int index) 
     {
         return houses[index];
     }
@@ -92,6 +100,20 @@ public class DeliveryManager : MonoBehaviour
     public TeaShop GetTeaShop(int index)
     {
         return shops[index];
+    }
+
+    public TeaShop GetTeaShop(teaTypes type)   //return the teashop that sells a type of tea, or null if one doesn't exist
+    {
+        for (int i=0;i<shops.Count;++i)
+        {
+            if (shops[i].type == type)
+            {
+                return shops[i];
+            }
+        }
+
+        Debug.Log("Error");
+        return shops[0];
     }
 
     public Delivery createDelivery(float time, House? houseToAvoid)  //Create new delivery struct and return it, time is passed in to allow it to become either fixed, or calculated

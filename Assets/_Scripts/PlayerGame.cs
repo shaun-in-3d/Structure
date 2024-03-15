@@ -13,11 +13,25 @@ public class PlayerGame : MonoBehaviour
     private teaTypes teaCarrying = teaTypes.none;
     private int bitesLeft=0;
 
+    private bool pointToHouse = false;
+
 
     private void Awake()
     {
         currentOrder = manager.createDelivery(5,null);
         currentOrder.location.script.enableHouse();
+    }
+
+    private void Update()
+    {
+        if(teaCarrying==currentOrder.type)
+        {
+            arrow.targetObject = currentOrder.location.script.gameObject.transform;
+        }
+        else
+        {
+            arrow.targetObject = manager.GetTeaShop(currentOrder.type).shop.transform;
+        }
     }
 
     public Delivery getCurrentDelivery()

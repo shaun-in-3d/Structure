@@ -9,7 +9,7 @@
 	</RootPaths>
 	<DialogueEvents/>
 	<SoundBanks>
-		<SoundBank Id="1355168291" Type="User" Language="SFX" Hash="{84A35666-08F0-55C8-81CF-2D5D82BC7BFE}">
+		<SoundBank Id="1355168291" Type="User" Language="SFX" Hash="{E556D7FA-D96D-FC8B-B3FB-96CCB1CCD637}">
 			<ShortName>Init</ShortName>
 			<Path>Init.bnk</Path>
 			<Plugins>
@@ -53,7 +53,7 @@
 				</SwitchGroup>
 			</SwitchGroups>
 		</SoundBank>
-		<SoundBank Id="3161908922" Type="User" Language="SFX" Hash="{62DCFC2A-F0E3-AAF4-7E3F-F3045F8D1C54}">
+		<SoundBank Id="3161908922" Type="User" Language="SFX" Hash="{A9DB114C-8DD1-37DE-55E1-1EBA89F85755}">
 			<ShortName>Main</ShortName>
 			<Path>Main.bnk</Path>
 			<Media>
@@ -64,6 +64,10 @@
 				<File Id="226845634" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Bike_Bell.wav</ShortName>
 					<CachePath>SFX/Bike_Bell_10C4C929.wem</CachePath>
+				</File>
+				<File Id="397639550" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>track_1_final.wav</ShortName>
+					<CachePath>SFX/track_1_final_D79FB2B7.wem</CachePath>
 				</File>
 				<File Id="399424105" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Ambience_Wind.wav</ShortName>
@@ -118,6 +122,13 @@
 					<CachePath>SFX/Ambience_Birds_10C4C929.wem</CachePath>
 				</File>
 			</Media>
+			<Plugins>
+				<ShareSets>
+					<Plugin Id="48620415" Name="Have_U_Ever_Been_Outside" LibName="Wwise RoomVerb" LibId="7733251"/>
+					<Plugin Id="1588715066" Name="Echoes_Linear" LibName="Wwise Delay" LibId="6946819"/>
+					<Plugin Id="3332138788" Name="Few_Even_Harm_Peaks" LibName="Wwise Flanger" LibId="8192003"/>
+				</ShareSets>
+			</Plugins>
 			<Events>
 				<Event Id="3850837052" Name="Ambience_Birds" MaxAttenuation="45" DurationType="OneShot" DurationMin="7.824458" DurationMax="7.824458">
 					<MediaRefs>
@@ -182,6 +193,18 @@
 						<MediaRef Id="582261513"/>
 					</MediaRefs>
 				</Event>
+				<Event Id="3991942870" Name="Music" DurationType="Infinite">
+					<MediaRefs>
+						<MediaRef Id="397639550"/>
+					</MediaRefs>
+					<PluginRefs>
+						<ShareSets>
+							<PluginRef Id="48620415"/>
+							<PluginRef Id="1588715066"/>
+							<PluginRef Id="3332138788"/>
+						</ShareSets>
+					</PluginRefs>
+				</Event>
 				<Event Id="3042867002" Name="Phone_Noti" DurationType="OneShot" DurationMin="1.1213444" DurationMax="1.4307649">
 					<MediaRefs>
 						<MediaRef Id="224799864"/>
@@ -201,5 +224,5 @@
 			</SwitchGroups>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{2A38D929-D869-4D0D-AAFB-400D40D9D70F}</FileHash>
+	<FileHash>{ACEED1DA-9720-3505-8B14-220B86D654ED}</FileHash>
 </SoundBanksInfo>

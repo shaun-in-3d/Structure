@@ -83,7 +83,7 @@ MonoBehaviour:
     ParentPath: SoundBanks\Default Work Unit
     guid: 2c362c84d91f004ca5888a0792948b6a
     GuidInternal: 
-    m_lastTime: -8584910948423224030
+    m_lastTime: -8584910883634671093
     List:
     - name: Main
       guid: d110db08507ccf4ca3617e5d4c990329
@@ -111,7 +111,7 @@ MonoBehaviour:
     ParentPath: Events\Default Work Unit
     guid: 1ae7c068c6ab3d47b1f6b3555c4d4ac8
     GuidInternal: 
-    m_lastTime: -8584910948428136144
+    m_lastTime: -8584910887705261556
     List:
     - name: Ambience_Birds
       guid: 555bd8db737cd84b9324edd8288838b6
@@ -161,7 +161,7 @@ MonoBehaviour:
         ObjectType: 3
         guid: 95836734cd0e11439f16cc22b2d2f03f
       Path: Events\Default Work Unit\Ambience_Wind
-      maxAttenuation: 100
+      maxAttenuation: 200
       maxDuration: 70.48
       minDuration: 70.48
     - name: Bike_Bell
@@ -266,6 +266,23 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: 2.512
       minDuration: 2.512
+    - name: Music
+      guid: 8a2e266bb179604b80e123fade590bb4
+      id: 3991942870
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 1ae7c068c6ab3d47b1f6b3555c4d4ac8
+      - ElementName: Music
+        ObjectType: 3
+        guid: 8a2e266bb179604b80e123fade590bb4
+      Path: Events\Default Work Unit\Music
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
     - name: Phone_Noti
       guid: 07b28c8826060d468f2cb1e1e4fd2d8b
       id: 3042867002
@@ -488,7 +505,7 @@ MonoBehaviour:
     m_lastTime: -8584911743946805610
     List: []
   ExpandedFileSystemItemIds: 
-  ExpandedWaapiItemIds: 0500000006000000170000001800000019000000
+  ExpandedWaapiItemIds: 0500000006000000070000001500000016000000170000001800000019000000
   AutoSyncSelection: 0
   autoPopulateEnabled: 1
   currentDataSource: 0

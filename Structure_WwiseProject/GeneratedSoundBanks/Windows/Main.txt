@@ -9,6 +9,7 @@ Event	ID	Name			Wwise Object Path	Notes
 	3850837052	Ambience_Birds			\Default Work Unit\Ambience_Birds	
 	3865913715	Ambience_Cafe			\Default Work Unit\Ambience_Cafe	
 	3910981062	Eat_Tea			\Default Work Unit\Eat_Tea	
+	3991942870	Music			\Default Work Unit\Music	
 
 Switch Group	ID	Name			Wwise Object Path	Notes
 	901759366	Bike_Surface			\Default Work Unit\Bike_Surface	
@@ -18,9 +19,15 @@ Switch	ID	Name	Switch Group			Notes
 	2110808655	Road	Bike_Surface			
 	4248645337	Grass	Bike_Surface			
 
+Effect plug-ins	ID	Name	Type				Notes
+	48620415	Have_U_Ever_Been_Outside	Wwise RoomVerb			
+	1588715066	Echoes_Linear	Wwise Delay			
+	3332138788	Few_Even_Harm_Peaks	Wwise Flanger			
+
 In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	224799864	Phone_Noti_1	C:\Users\flynn\GitHub\Structure\Structure_WwiseProject\.cache\Windows\SFX\Phone_Noti_1_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Phone_Noti\Phone_Noti_1		242784
 	226845634	Bike_Bell	C:\Users\flynn\GitHub\Structure\Structure_WwiseProject\.cache\Windows\SFX\Bike_Bell_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Bike_Bell		142460
+	397639550	Track_1	C:\Users\flynn\GitHub\Structure\Structure_WwiseProject\.cache\Windows\SFX\track_1_final_D79FB2B7.wem		\Actor-Mixer Hierarchy\Default Work Unit\Track_1		6158108
 	399424105	Ambience_Wind	C:\Users\flynn\GitHub\Structure\Structure_WwiseProject\.cache\Windows\SFX\Ambience_Wind_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Ambience_Wind		13532256
 	416168121	Bike_Grass	C:\Users\flynn\GitHub\Structure\Structure_WwiseProject\.cache\Windows\SFX\Bike_Grass_D79FB2B7.wem		\Actor-Mixer Hierarchy\Default Work Unit\Bike_Surface\Bike_Grass		956120
 	505449346	Cancel	C:\Users\flynn\GitHub\Structure\Structure_WwiseProject\.cache\Windows\SFX\Cancel_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Cancel		137312

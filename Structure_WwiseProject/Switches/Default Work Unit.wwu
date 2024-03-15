@@ -6,8 +6,8 @@
 				<SwitchGroup Name="Bike_Surface" ID="{544FD381-F683-4001-9E4A-A56CD6331F8B}">
 					<ChildrenList>
 						<Switch Name="Road" ID="{7DB2254D-00ED-48C0-B502-D79674375292}"/>
-						<Switch Name="Pavement" ID="{BC6357EF-AA2B-451D-828D-FE4AE676ED6D}"/>
 						<Switch Name="Grass" ID="{D11530F2-3562-415E-AFA7-646BC0588E22}"/>
+						<Switch Name="Sand" ID="{2B2D13AC-11B4-45A8-87A7-283737DBBFFF}"/>
 					</ChildrenList>
 				</SwitchGroup>
 			</ChildrenList>

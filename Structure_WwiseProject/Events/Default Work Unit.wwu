@@ -47,7 +47,72 @@
 						</Action>
 					</ChildrenList>
 				</Event>
-				<Event Name="New_Event" ID="{524C8559-6594-4F8A-AFEB-F59C269C4085}"/>
+				<Event Name="Ambience_Birds" ID="{DBD85B55-7C73-4BD8-9324-EDD8288838B6}">
+					<ChildrenList>
+						<Action Name="" ID="{ADC822E1-A7C6-425B-A47C-39DC208648A3}" ShortID="462521740">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Ambience_Birds" ID="{4BEA1889-BA14-4B62-9ED9-91E4A2110915}" WorkUnitID="{11784964-2D62-43BD-932E-2A4540EB873E}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Ambience_Cafe" ID="{3912EA87-D6B8-4312-B486-64A2FB125880}">
+					<ChildrenList>
+						<Action Name="" ID="{D0ABABB5-89A4-4665-B78D-77C178D15C93}" ShortID="143161927">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Ambience_Cafe" ID="{B406470B-371D-4DD0-93BB-7CE211F21638}" WorkUnitID="{11784964-2D62-43BD-932E-2A4540EB873E}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Eat_Tea" ID="{0C9A129E-DC41-43DB-A1AD-73D8EBF0D286}">
+					<ChildrenList>
+						<Action Name="" ID="{6E416197-A442-47A6-A05D-FAF577F76549}" ShortID="308570436">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Eat_Tea" ID="{28F59A58-E926-4600-B2A8-15F68FBB93C2}" WorkUnitID="{11784964-2D62-43BD-932E-2A4540EB873E}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Bike_Surface" ID="{51037F5F-97BC-452A-8377-20CA2A666E76}">
+					<ChildrenList>
+						<Action Name="" ID="{7B9620E1-3133-4DD4-8C07-763BC5A6E276}" ShortID="934469940">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Bike_Surface" ID="{82C3D514-7D4C-4C06-A679-BE158750A1AB}" WorkUnitID="{11784964-2D62-43BD-932E-2A4540EB873E}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Bike_Bell" ID="{77B0BB25-487C-4531-987E-A67C1540F870}">
+					<ChildrenList>
+						<Action Name="" ID="{857A22A2-BAF8-40EC-9F2A-2E2E9214E0D4}" ShortID="939244793">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Bike_Bell" ID="{9D10F12A-46E6-4205-B836-7BB6EFBD44B2}" WorkUnitID="{11784964-2D62-43BD-932E-2A4540EB873E}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Ambience_Wind" ID="{34678395-0ECD-4311-9F16-CC22B2D2F03F}">
+					<ChildrenList>
+						<Action Name="" ID="{68BECD02-BB52-4316-8152-170F33EBCEEC}" ShortID="930736101">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Ambience_Wind" ID="{8860BDD7-E32A-4AF9-9435-29EB1B422F1F}" WorkUnitID="{11784964-2D62-43BD-932E-2A4540EB873E}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>

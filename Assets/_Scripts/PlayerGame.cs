@@ -4,12 +4,14 @@ using System.Net.WebSockets;
 using Unity.PlasticSCM.Editor.WebApi;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.Profiling;
 
 public class PlayerGame : MonoBehaviour
 {
     [SerializeField] private int strikes = 3;
     [SerializeField] private DeliveryManager manager;
     [SerializeField] private DirectionArrow arrow;
+    [SerializeField] private StaminaBar staminaBar;
 
     [SerializeField] public float timeForDelivery = 120;
 
@@ -17,7 +19,7 @@ public class PlayerGame : MonoBehaviour
     private teaTypes teaCarrying = teaTypes.none;
     private int bitesLeft=0;
 
-    [SerializeField] private float staminaDrainRate=0.02f;
+    [SerializeField] private float staminaDrainRate = 0.02f;
     [SerializeField] private float staminaRegainRate = 0.05f;
     [SerializeField] private float eatingStaminaRegain = 0.4f;
     [SerializeField] private float minStaminaSpeed = 0.1f;
@@ -26,8 +28,9 @@ public class PlayerGame : MonoBehaviour
 
     private PlayerInput playerInput;
 
-    Rigidbody rb;
+    private Rigidbody rb;
 
+    public string[] teaNames = new string[5] { "Boba tea", "Green tea", "English tea", "Iced tea", "Microwave tea" };
 
     private void Awake()
     {
@@ -37,7 +40,9 @@ public class PlayerGame : MonoBehaviour
         playerInput=GetComponent<PlayerInput>();
 
         playerInput.actions["Eat"].Enable();    //Add eat tea to the eat function
-        playerInput.actions["Eat"].started += eatTea;   
+        playerInput.actions["Eat"].started += eatTea;
+
+        DialogueManager.Instance.ShowMessage("ExampleCharacter", "Order of " + teaNames[(int)currentOrder.type-1] + " to go to house");
     }
 
     private void Update()
@@ -66,7 +71,8 @@ public class PlayerGame : MonoBehaviour
         {
             loseFunction(); 
         }
-        
+
+        staminaBar.setStamina(stamina);
     }
 
     public Delivery getCurrentDelivery()
@@ -83,7 +89,7 @@ public class PlayerGame : MonoBehaviour
 
     public void eatTea(InputAction.CallbackContext context)
     {
-        if(teaCarrying==teaTypes.none)  //No tea to eat
+        if(teaCarrying==teaTypes.none || bitesLeft == 1)  //No tea to eat
         {
             return;
         }
@@ -101,24 +107,31 @@ public class PlayerGame : MonoBehaviour
     {
         //Increment score
 
-        //Check for if player should be penalized (order wrong, eaten)
+        //Order half eaten
+        if(bitesLeft<2)
+        {
+            if(Random.Range(0.0f, 1.0f)<0.5f)   //Random number 1 in 2
+            {
+                Debug.Log("Order half eaten");
+                strikes--;
+            }
+        }
 
-        if(currentOrder.type!=teaCarrying)  //Carrying the wrong tea
+        else if(currentOrder.type!=teaCarrying)  //Carrying the wrong tea
         {
             Debug.Log("Wrong order");
             //TODO: Add code for NPC telling player they're order is wrong
 
             strikes--;
-
-            if(strikes==0)
-            {
-                loseFunction();
-            }
-
         }
         else
         {
             Debug.Log("Right order");
+        }
+
+        if (strikes == 0)
+        {
+            loseFunction();
         }
 
         updateOrder(newOrder);
@@ -140,6 +153,7 @@ public class PlayerGame : MonoBehaviour
 
     private void updateOrder(Delivery newOrder)
     {
+        
         if(currentOrder.location.script!=null)
         {
             currentOrder.location.script.disableHouse();
@@ -148,6 +162,7 @@ public class PlayerGame : MonoBehaviour
         newOrder.location.script.enableHouse();
         currentOrder = newOrder;
         arrow.targetObject = newOrder.location.script.gameObject.transform;
+        DialogueManager.Instance.ShowMessage("ExampleCharacter","Order of "+teaNames[(int)newOrder.type-1]+" to go to house");
     }
 
     public bool takeTea(teaTypes type)

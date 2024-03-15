@@ -24,7 +24,7 @@ MonoBehaviour:
     ParentPath: Virtual Acoustics\Default Work Unit
     guid: 5614017604adaf4ca3328b1419055864
     GuidInternal: 
-    m_lastTime: -8584911082590256070
+    m_lastTime: -8584911097913033441
     List: []
   AuxBusWwu:
   - PhysicalPath: Master-Mixer Hierarchy\Default Work Unit.wwu
@@ -38,7 +38,7 @@ MonoBehaviour:
     ParentPath: Master-Mixer Hierarchy\Default Work Unit
     guid: 42da5065977e3942a32368e7c0764a42
     GuidInternal: 
-    m_lastTime: -8584911082593506596
+    m_lastTime: -8584910943404569673
     List:
     - name: Master Audio Bus
       guid: d8a41415a61d2a41a17e75ca0c2149f3
@@ -54,6 +54,23 @@ MonoBehaviour:
         ObjectType: 2
         guid: d8a41415a61d2a41a17e75ca0c2149f3
       Path: Master-Mixer Hierarchy\Default Work Unit\Master Audio Bus
+    - name: Outdoors_Reverb
+      guid: 60a7bd7995b6504b9dc873c735fcc458
+      id: 2653823909
+      PathAndIcons:
+      - ElementName: Master-Mixer Hierarchy
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 42da5065977e3942a32368e7c0764a42
+      - ElementName: Master Audio Bus
+        ObjectType: 2
+        guid: d8a41415a61d2a41a17e75ca0c2149f3
+      - ElementName: Outdoors_Reverb
+        ObjectType: 1
+        guid: 60a7bd7995b6504b9dc873c735fcc458
+      Path: Master-Mixer Hierarchy\Default Work Unit\Master Audio Bus\Outdoors_Reverb
   BankWwu:
   - PhysicalPath: SoundBanks\Default Work Unit.wwu
     PathAndIcons:
@@ -66,7 +83,7 @@ MonoBehaviour:
     ParentPath: SoundBanks\Default Work Unit
     guid: 2c362c84d91f004ca5888a0792948b6a
     GuidInternal: 
-    m_lastTime: -8584911082590915819
+    m_lastTime: -8584910943395377485
     List:
     - name: Main
       guid: d110db08507ccf4ca3617e5d4c990329
@@ -94,8 +111,93 @@ MonoBehaviour:
     ParentPath: Events\Default Work Unit
     guid: 1ae7c068c6ab3d47b1f6b3555c4d4ac8
     GuidInternal: 
-    m_lastTime: -8584911082595473705
+    m_lastTime: -8584910943411487698
     List:
+    - name: Ambience_Birds
+      guid: 555bd8db737cd84b9324edd8288838b6
+      id: 3850837052
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 1ae7c068c6ab3d47b1f6b3555c4d4ac8
+      - ElementName: Ambience_Birds
+        ObjectType: 3
+        guid: 555bd8db737cd84b9324edd8288838b6
+      Path: Events\Default Work Unit\Ambience_Birds
+      maxAttenuation: 45
+      maxDuration: 7.824458
+      minDuration: 7.824458
+    - name: Ambience_Cafe
+      guid: 87ea1239b8d61243b48664a2fb125880
+      id: 3865913715
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 1ae7c068c6ab3d47b1f6b3555c4d4ac8
+      - ElementName: Ambience_Cafe
+        ObjectType: 3
+        guid: 87ea1239b8d61243b48664a2fb125880
+      Path: Events\Default Work Unit\Ambience_Cafe
+      maxAttenuation: 70
+      maxDuration: 10.31875
+      minDuration: 10.31875
+    - name: Ambience_Wind
+      guid: 95836734cd0e11439f16cc22b2d2f03f
+      id: 156328838
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 1ae7c068c6ab3d47b1f6b3555c4d4ac8
+      - ElementName: Ambience_Wind
+        ObjectType: 3
+        guid: 95836734cd0e11439f16cc22b2d2f03f
+      Path: Events\Default Work Unit\Ambience_Wind
+      maxAttenuation: 100
+      maxDuration: 70.48
+      minDuration: 70.48
+    - name: Bike_Bell
+      guid: 25bbb0777c483145987ea67c1540f870
+      id: 1766085546
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 1ae7c068c6ab3d47b1f6b3555c4d4ac8
+      - ElementName: Bike_Bell
+        ObjectType: 3
+        guid: 25bbb0777c483145987ea67c1540f870
+      Path: Events\Default Work Unit\Bike_Bell
+      maxAttenuation: 0
+      maxDuration: 0.74147916
+      minDuration: 0.74147916
+    - name: Bike_Surface
+      guid: 5f7f0351bc972a45837720ca2a666e76
+      id: 901759366
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 1ae7c068c6ab3d47b1f6b3555c4d4ac8
+      - ElementName: Bike_Surface
+        ObjectType: 3
+        guid: 5f7f0351bc972a45837720ca2a666e76
+      Path: Events\Default Work Unit\Bike_Surface
+      maxAttenuation: 0
+      maxDuration: Infinity
+      minDuration: 4.9792914
     - name: Cancel
       guid: aa0b84541c4b58428f43474ff6e02734
       id: 2760337059
@@ -130,6 +232,23 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: 0.73066664
       minDuration: 0.73066664
+    - name: Eat_Tea
+      guid: 9e129a0c41dcdb43a1ad73d8ebf0d286
+      id: 3910981062
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 1ae7c068c6ab3d47b1f6b3555c4d4ac8
+      - ElementName: Eat_Tea
+        ObjectType: 3
+        guid: 9e129a0c41dcdb43a1ad73d8ebf0d286
+      Path: Events\Default Work Unit\Eat_Tea
+      maxAttenuation: 0
+      maxDuration: 0.8783379
+      minDuration: 0.7752354
     - name: Game_Loss
       guid: a357d00f93cb7f4db442f7a75e596757
       id: 3425053579
@@ -147,23 +266,6 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: 2.512
       minDuration: 2.512
-    - name: New_Event
-      guid: 59854c5294658a4fafebf59c269c4085
-      id: 3050945240
-      PathAndIcons:
-      - ElementName: Events
-        ObjectType: 5
-        guid: 00000000000000000000000000000000
-      - ElementName: Default Work Unit
-        ObjectType: 12
-        guid: 1ae7c068c6ab3d47b1f6b3555c4d4ac8
-      - ElementName: New_Event
-        ObjectType: 3
-        guid: 59854c5294658a4fafebf59c269c4085
-      Path: Events\Default Work Unit\New_Event
-      maxAttenuation: 0
-      maxDuration: -1
-      minDuration: -1
     - name: Phone_Noti
       guid: 07b28c8826060d468f2cb1e1e4fd2d8b
       id: 3042867002
@@ -179,8 +281,8 @@ MonoBehaviour:
         guid: 07b28c8826060d468f2cb1e1e4fd2d8b
       Path: Events\Default Work Unit\Phone_Noti
       maxAttenuation: 0
-      maxDuration: 1.2783533
-      minDuration: 1.2550367
+      maxDuration: 1.4307649
+      minDuration: 1.1213444
   RtpcWwu:
   - PhysicalPath: Game Parameters\Default Work Unit.wwu
     PathAndIcons:
@@ -193,7 +295,7 @@ MonoBehaviour:
     ParentPath: Game Parameters\Default Work Unit
     guid: 389f3bf244b0c74fb5e7ae856b8281c3
     GuidInternal: 
-    m_lastTime: -8584911082595456145
+    m_lastTime: -8584911097916105238
     List: []
   StateWwu:
   - PhysicalPath: States\Default Work Unit.wwu
@@ -207,7 +309,7 @@ MonoBehaviour:
     ParentPath: States\Default Work Unit
     guid: 79afe8ec3bbadf49bfa62693dc543f03
     GuidInternal: 
-    m_lastTime: -8584911082590750749
+    m_lastTime: -8584911097913591948
     List:
     - name: Music
       guid: 21de4903ea6eca458252f8594acdfaac
@@ -303,7 +405,7 @@ MonoBehaviour:
     ParentPath: Switches\Default Work Unit
     guid: ec17a5072d45a14996b3c8e41b115e6d
     GuidInternal: 
-    m_lastTime: -8584911082590256070
+    m_lastTime: -8584910943394921330
     List:
     - name: Bike_Surface
       guid: 81d34f5483f601409e4aa56cd6331f8b
@@ -336,22 +438,6 @@ MonoBehaviour:
         - ElementName: Grass
           ObjectType: 10
           guid: f23015d162355e41afa7646bc0588e22
-      - name: Pavement
-        guid: ef5763bc2baa1d45828dfe4ae676ed6d
-        id: 2830102203
-        PathAndIcons:
-        - ElementName: Switches
-          ObjectType: 5
-          guid: 00000000000000000000000000000000
-        - ElementName: Default Work Unit
-          ObjectType: 12
-          guid: ec17a5072d45a14996b3c8e41b115e6d
-        - ElementName: Bike_Surface
-          ObjectType: 11
-          guid: 81d34f5483f601409e4aa56cd6331f8b
-        - ElementName: Pavement
-          ObjectType: 10
-          guid: ef5763bc2baa1d45828dfe4ae676ed6d
       - name: Road
         guid: 4d25b27ded00c048b502d79674375292
         id: 2110808655
@@ -368,6 +454,22 @@ MonoBehaviour:
         - ElementName: Road
           ObjectType: 10
           guid: 4d25b27ded00c048b502d79674375292
+      - name: Sand
+        guid: ac132d2bb411a84587a7283737dbbfff
+        id: 803837735
+        PathAndIcons:
+        - ElementName: Switches
+          ObjectType: 5
+          guid: 00000000000000000000000000000000
+        - ElementName: Default Work Unit
+          ObjectType: 12
+          guid: ec17a5072d45a14996b3c8e41b115e6d
+        - ElementName: Bike_Surface
+          ObjectType: 11
+          guid: 81d34f5483f601409e4aa56cd6331f8b
+        - ElementName: Sand
+          ObjectType: 10
+          guid: ac132d2bb411a84587a7283737dbbfff
       ValueGuids: []
       ValueIcons: []
       valuesInternal: []
@@ -383,7 +485,7 @@ MonoBehaviour:
     ParentPath: Triggers\Default Work Unit
     guid: a11ae5aef2d8fc46858ace4dcf611b0a
     GuidInternal: 
-    m_lastTime: -8584911082590256070
+    m_lastTime: -8584911097913123184
     List: []
   ExpandedFileSystemItemIds: 
   ExpandedWaapiItemIds: 

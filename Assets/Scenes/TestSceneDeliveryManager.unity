@@ -508,6 +508,10 @@ PrefabInstance:
       propertyPath: manager
       value: 
       objectReference: {fileID: 1916611998}
+    - target: {fileID: 3255592125182635294, guid: 4bd72c7c1f3438144a0295e72ee68022, type: 3}
+      propertyPath: m_Drag
+      value: 0.8
+      objectReference: {fileID: 0}
     - target: {fileID: 5779996996949387870, guid: 4bd72c7c1f3438144a0295e72ee68022, type: 3}
       propertyPath: m_LocalPosition.x
       value: -10

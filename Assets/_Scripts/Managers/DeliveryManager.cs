@@ -92,6 +92,8 @@ public class DeliveryManager : MonoBehaviour
         addTeaShop(s);
     }
 
+
+
     public House GetHouse(int index) 
     {
         return houses[index];
@@ -142,7 +144,6 @@ public class DeliveryManager : MonoBehaviour
 
     public void completeDelivery()  //Complete delivery, to be called in house
     {
-        const float time = 120; //Delay
-        Player.completeOrder(createDelivery(time,Player.getCurrentDelivery().location));
+        Player.completeOrder(createDelivery(Player.timeForDelivery, Player.getCurrentDelivery().location));
     }
 }

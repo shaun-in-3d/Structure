@@ -1,14 +1,37 @@
 Event	ID	Name			Wwise Object Path	Notes
+	156328838	Ambience_Wind			\Default Work Unit\Ambience_Wind	
+	901759366	Bike_Surface			\Default Work Unit\Bike_Surface	
 	1517537939	Confirm			\Default Work Unit\Confirm	
+	1766085546	Bike_Bell			\Default Work Unit\Bike_Bell	
 	2760337059	Cancel			\Default Work Unit\Cancel	
 	3042867002	Phone_Noti			\Default Work Unit\Phone_Noti	
 	3425053579	Game_Loss			\Default Work Unit\Game_Loss	
+	3850837052	Ambience_Birds			\Default Work Unit\Ambience_Birds	
+	3865913715	Ambience_Cafe			\Default Work Unit\Ambience_Cafe	
+	3910981062	Eat_Tea			\Default Work Unit\Eat_Tea	
+
+Switch Group	ID	Name			Wwise Object Path	Notes
+	901759366	Bike_Surface			\Default Work Unit\Bike_Surface	
+
+Switch	ID	Name	Switch Group			Notes
+	803837735	Sand	Bike_Surface			
+	2110808655	Road	Bike_Surface			
+	4248645337	Grass	Bike_Surface			
 
 In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	224799864	Phone_Noti_1	C:\Users\flynn\GitHub\Structure\Structure_WwiseProject\.cache\Windows\SFX\Phone_Noti_1_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Phone_Noti\Phone_Noti_1		242784
+	226845634	Bike_Bell	C:\Users\flynn\GitHub\Structure\Structure_WwiseProject\.cache\Windows\SFX\Bike_Bell_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Bike_Bell		142460
+	399424105	Ambience_Wind	C:\Users\flynn\GitHub\Structure\Structure_WwiseProject\.cache\Windows\SFX\Ambience_Wind_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Ambience_Wind		13532256
+	416168121	Bike_Grass	C:\Users\flynn\GitHub\Structure\Structure_WwiseProject\.cache\Windows\SFX\Bike_Grass_D79FB2B7.wem		\Actor-Mixer Hierarchy\Default Work Unit\Bike_Surface\Bike_Grass		956120
 	505449346	Cancel	C:\Users\flynn\GitHub\Structure\Structure_WwiseProject\.cache\Windows\SFX\Cancel_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Cancel		137312
 	522958349	Phone_Noti_2	C:\Users\flynn\GitHub\Structure\Structure_WwiseProject\.cache\Windows\SFX\Phone_Noti_2_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Phone_Noti\Phone_Noti_2		241760
+	539590533	Bike_Road	C:\Users\flynn\GitHub\Structure\Structure_WwiseProject\.cache\Windows\SFX\Bike_Road_D79FB2B7.wem		\Actor-Mixer Hierarchy\Default Work Unit\Bike_Surface\Bike_Road		956120
+	553968660	Bike_Sand	C:\Users\flynn\GitHub\Structure\Structure_WwiseProject\.cache\Windows\SFX\Bike_Sand_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Bike_Surface\Bike_Sand		956120
 	582261513	Game_Loss	C:\Users\flynn\GitHub\Structure\Structure_WwiseProject\.cache\Windows\SFX\Game_Loss_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Game_Loss		482400
 	604199362	Phone_Noti_3	C:\Users\flynn\GitHub\Structure\Structure_WwiseProject\.cache\Windows\SFX\Phone_Noti_3_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Phone_Noti\Phone_Noti_3		244832
+	608936965	Ambience_Cafe	C:\Users\flynn\GitHub\Structure\Structure_WwiseProject\.cache\Windows\SFX\Ambience_Cafe_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Ambience_Cafe		1981296
+	662486985	Eat_Tea_1	C:\Users\flynn\GitHub\Structure\Structure_WwiseProject\.cache\Windows\SFX\Eat_Tea_1_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Eat_Tea\Eat_Tea_1		163936
 	944901225	Confirm	C:\Users\flynn\GitHub\Structure\Structure_WwiseProject\.cache\Windows\SFX\Confirm_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Confirm		140384
+	975656669	Eat_Tea_2	C:\Users\flynn\GitHub\Structure\Structure_WwiseProject\.cache\Windows\SFX\Eat_Tea_2_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Eat_Tea\Eat_Tea_2		157792
+	1021939505	Ambience_Birds	C:\Users\flynn\GitHub\Structure\Structure_WwiseProject\.cache\Windows\SFX\Ambience_Birds_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Ambience_Birds		1502392
 

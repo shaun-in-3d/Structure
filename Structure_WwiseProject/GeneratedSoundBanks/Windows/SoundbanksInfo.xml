@@ -9,10 +9,13 @@
 	</RootPaths>
 	<DialogueEvents/>
 	<SoundBanks>
-		<SoundBank Id="1355168291" Type="User" Language="SFX" Hash="{590B7C36-2709-7878-E7D0-21DF7270333A}">
+		<SoundBank Id="1355168291" Type="User" Language="SFX" Hash="{84A35666-08F0-55C8-81CF-2D5D82BC7BFE}">
 			<ShortName>Init</ShortName>
 			<Path>Init.bnk</Path>
 			<Plugins>
+				<ShareSets>
+					<Plugin Id="48620415" Name="Have_U_Ever_Been_Outside" LibName="Wwise RoomVerb" LibId="7733251"/>
+				</ShareSets>
 				<AudioDevices>
 					<Plugin Id="2317455096" Name="No_Output" LibName="No Output" LibId="11862023"/>
 					<Plugin Id="3859886410" Name="System" LibName="System" LibId="11403271"/>
@@ -21,6 +24,15 @@
 			<Busses>
 				<Bus Id="3803692087" Name="Master Audio Bus"/>
 			</Busses>
+			<AuxBusses>
+				<AuxBus Id="2653823909" Name="Outdoors_Reverb">
+					<PluginRefs>
+						<ShareSets>
+							<PluginRef Id="48620415"/>
+						</ShareSets>
+					</PluginRefs>
+				</AuxBus>
+			</AuxBusses>
 			<StateGroups>
 				<StateGroup Id="3991942870" Name="Music">
 					<States>
@@ -34,20 +46,32 @@
 			<SwitchGroups>
 				<SwitchGroup Id="901759366" Name="Bike_Surface">
 					<Switches>
+						<Switch Id="803837735" Name="Sand"/>
 						<Switch Id="2110808655" Name="Road"/>
-						<Switch Id="2830102203" Name="Pavement"/>
 						<Switch Id="4248645337" Name="Grass"/>
 					</Switches>
 				</SwitchGroup>
 			</SwitchGroups>
 		</SoundBank>
-		<SoundBank Id="3161908922" Type="User" Language="SFX" Hash="{E339167C-CD95-569D-1CA8-A192FD598AE7}">
+		<SoundBank Id="3161908922" Type="User" Language="SFX" Hash="{1ED5A905-F9A9-5C14-77E6-4CF06999030B}">
 			<ShortName>Main</ShortName>
 			<Path>Main.bnk</Path>
 			<Media>
 				<File Id="224799864" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Phone_Noti_1.wav</ShortName>
 					<CachePath>SFX/Phone_Noti_1_10C4C929.wem</CachePath>
+				</File>
+				<File Id="226845634" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Bike_Bell.wav</ShortName>
+					<CachePath>SFX/Bike_Bell_10C4C929.wem</CachePath>
+				</File>
+				<File Id="399424105" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Ambience_Wind.wav</ShortName>
+					<CachePath>SFX/Ambience_Wind_10C4C929.wem</CachePath>
+				</File>
+				<File Id="416168121" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Bike_Grass.wav</ShortName>
+					<CachePath>SFX/Bike_Grass_D79FB2B7.wem</CachePath>
 				</File>
 				<File Id="505449346" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Cancel.wav</ShortName>
@@ -57,6 +81,14 @@
 					<ShortName>Phone_Noti_2.wav</ShortName>
 					<CachePath>SFX/Phone_Noti_2_10C4C929.wem</CachePath>
 				</File>
+				<File Id="539590533" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Bike_Road.wav</ShortName>
+					<CachePath>SFX/Bike_Road_D79FB2B7.wem</CachePath>
+				</File>
+				<File Id="553968660" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Bike_Sand.wav</ShortName>
+					<CachePath>SFX/Bike_Sand_10C4C929.wem</CachePath>
+				</File>
 				<File Id="582261513" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Game_Loss.wav</ShortName>
 					<CachePath>SFX/Game_Loss_10C4C929.wem</CachePath>
@@ -65,12 +97,70 @@
 					<ShortName>Phone_Noti_3.wav</ShortName>
 					<CachePath>SFX/Phone_Noti_3_10C4C929.wem</CachePath>
 				</File>
+				<File Id="608936965" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Ambience_Cafe.wav</ShortName>
+					<CachePath>SFX/Ambience_Cafe_10C4C929.wem</CachePath>
+				</File>
+				<File Id="662486985" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Eat_Tea_1.wav</ShortName>
+					<CachePath>SFX/Eat_Tea_1_10C4C929.wem</CachePath>
+				</File>
 				<File Id="944901225" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Confirm.wav</ShortName>
 					<CachePath>SFX/Confirm_10C4C929.wem</CachePath>
 				</File>
+				<File Id="975656669" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Eat_Tea_2.wav</ShortName>
+					<CachePath>SFX/Eat_Tea_2_10C4C929.wem</CachePath>
+				</File>
+				<File Id="1021939505" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Ambience_Birds.wav</ShortName>
+					<CachePath>SFX/Ambience_Birds_10C4C929.wem</CachePath>
+				</File>
 			</Media>
 			<Events>
+				<Event Id="3850837052" Name="Ambience_Birds" MaxAttenuation="45" DurationType="OneShot" DurationMin="7.824458" DurationMax="7.824458">
+					<MediaRefs>
+						<MediaRef Id="1021939505"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="3865913715" Name="Ambience_Cafe" MaxAttenuation="70" DurationType="OneShot" DurationMin="10.31875" DurationMax="10.31875">
+					<MediaRefs>
+						<MediaRef Id="608936965"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="156328838" Name="Ambience_Wind" MaxAttenuation="100" DurationType="OneShot" DurationMin="70.48" DurationMax="70.48">
+					<MediaRefs>
+						<MediaRef Id="399424105"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="1766085546" Name="Bike_Bell" DurationType="OneShot" DurationMin="0.74147916" DurationMax="0.74147916">
+					<MediaRefs>
+						<MediaRef Id="226845634"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="901759366" Name="Bike_Surface" DurationType="Mixed" DurationMin="4.9792914" DurationMax="Infinite">
+					<SwitchContainers>
+						<SwitchContainer>
+							<SwitchValue GroupType="Switch" GroupId="901759366" Id="2110808655" Default="true"/>
+							<MediaRefs>
+								<MediaRef Id="539590533"/>
+							</MediaRefs>
+						</SwitchContainer>
+						<SwitchContainer>
+							<SwitchValue GroupType="Switch" GroupId="901759366" Id="803837735"/>
+							<MediaRefs>
+								<MediaRef Id="553968660"/>
+							</MediaRefs>
+						</SwitchContainer>
+						<SwitchContainer>
+							<SwitchValue GroupType="Switch" GroupId="901759366" Id="4248645337"/>
+							<MediaRefs>
+								<MediaRef Id="416168121"/>
+							</MediaRefs>
+						</SwitchContainer>
+					</SwitchContainers>
+				</Event>
 				<Event Id="2760337059" Name="Cancel" DurationType="OneShot" DurationMin="0.71466666" DurationMax="0.71466666">
 					<MediaRefs>
 						<MediaRef Id="505449346"/>
@@ -81,12 +171,18 @@
 						<MediaRef Id="944901225"/>
 					</MediaRefs>
 				</Event>
+				<Event Id="3910981062" Name="Eat_Tea" DurationType="OneShot" DurationMin="0.7752354" DurationMax="0.8783379">
+					<MediaRefs>
+						<MediaRef Id="662486985"/>
+						<MediaRef Id="975656669"/>
+					</MediaRefs>
+				</Event>
 				<Event Id="3425053579" Name="Game_Loss" DurationType="OneShot" DurationMin="2.512" DurationMax="2.512">
 					<MediaRefs>
 						<MediaRef Id="582261513"/>
 					</MediaRefs>
 				</Event>
-				<Event Id="3042867002" Name="Phone_Noti" DurationType="OneShot" DurationMin="1.2550367" DurationMax="1.2783533">
+				<Event Id="3042867002" Name="Phone_Noti" DurationType="OneShot" DurationMin="1.1213444" DurationMax="1.4307649">
 					<MediaRefs>
 						<MediaRef Id="224799864"/>
 						<MediaRef Id="522958349"/>
@@ -94,7 +190,16 @@
 					</MediaRefs>
 				</Event>
 			</Events>
+			<SwitchGroups>
+				<SwitchGroup Id="901759366" Name="Bike_Surface">
+					<Switches>
+						<Switch Id="803837735" Name="Sand"/>
+						<Switch Id="2110808655" Name="Road"/>
+						<Switch Id="4248645337" Name="Grass"/>
+					</Switches>
+				</SwitchGroup>
+			</SwitchGroups>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{66DB2B59-72D9-1A35-63B8-0070AAD691B7}</FileHash>
+	<FileHash>{C6D4C251-4A1A-5110-A997-C4335D4E59CF}</FileHash>
 </SoundBanksInfo>

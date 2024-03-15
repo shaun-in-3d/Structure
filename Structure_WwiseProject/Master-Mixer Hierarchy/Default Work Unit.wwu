@@ -9,6 +9,15 @@
 							<ObjectRef Name="System" ID="{A44675E6-C733-4690-A129-D052658A1150}" WorkUnitID="{E442BA4F-2308-4616-8434-E23176A846A9}"/>
 						</Reference>
 					</ReferenceList>
+					<ChildrenList>
+						<AuxBus Name="Outdoors_Reverb" ID="{79BDA760-B695-4B50-9DC8-73C735FCC458}">
+							<ReferenceList>
+								<Reference Name="Effect0" PluginName="Wwise RoomVerb" CompanyID="0" PluginID="118" PluginType="3">
+									<ObjectRef Name="Have_U_Ever_Been_Outside" ID="{FE29AE8D-FD86-4652-A95D-68D32F5760EC}" WorkUnitID="{E8613F7D-BAD3-45CD-A3ED-505576F31277}"/>
+								</Reference>
+							</ReferenceList>
+						</AuxBus>
+					</ChildrenList>
 				</Bus>
 			</ChildrenList>
 		</WorkUnit>

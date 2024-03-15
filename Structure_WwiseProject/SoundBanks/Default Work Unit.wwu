@@ -6,7 +6,13 @@
 				<SoundBank Name="Main" ID="{08DB10D1-7C50-4CCF-A361-7E5D4C990329}">
 					<ObjectInclusionList>
 						<ObjectRef Name="Cancel" ID="{54840BAA-4B1C-4258-8F43-474FF6E02734}" WorkUnitID="{68C0E71A-ABC6-473D-B1F6-B3555C4D4AC8}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Ambience_Wind" ID="{34678395-0ECD-4311-9F16-CC22B2D2F03F}" WorkUnitID="{68C0E71A-ABC6-473D-B1F6-B3555C4D4AC8}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Ambience_Cafe" ID="{3912EA87-D6B8-4312-B486-64A2FB125880}" WorkUnitID="{68C0E71A-ABC6-473D-B1F6-B3555C4D4AC8}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Eat_Tea" ID="{0C9A129E-DC41-43DB-A1AD-73D8EBF0D286}" WorkUnitID="{68C0E71A-ABC6-473D-B1F6-B3555C4D4AC8}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Bike_Surface" ID="{51037F5F-97BC-452A-8377-20CA2A666E76}" WorkUnitID="{68C0E71A-ABC6-473D-B1F6-B3555C4D4AC8}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Bike_Bell" ID="{77B0BB25-487C-4531-987E-A67C1540F870}" WorkUnitID="{68C0E71A-ABC6-473D-B1F6-B3555C4D4AC8}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Phone_Noti" ID="{888CB207-0626-460D-8F2C-B1E1E4FD2D8B}" WorkUnitID="{68C0E71A-ABC6-473D-B1F6-B3555C4D4AC8}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Ambience_Birds" ID="{DBD85B55-7C73-4BD8-9324-EDD8288838B6}" WorkUnitID="{68C0E71A-ABC6-473D-B1F6-B3555C4D4AC8}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Confirm" ID="{E4A91881-92C4-4BEA-A14E-39CCE98FFE18}" WorkUnitID="{68C0E71A-ABC6-473D-B1F6-B3555C4D4AC8}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Game_Loss" ID="{0FD057A3-CB93-4D7F-B442-F7A75E596757}" WorkUnitID="{68C0E71A-ABC6-473D-B1F6-B3555C4D4AC8}" Origin="Manual" Filter="7"/>
 					</ObjectInclusionList>

@@ -77,8 +77,8 @@
 									<Modifier Name="" ID="{502CC454-ACC9-4C24-BADD-C106B63717D1}">
 										<PropertyList>
 											<Property Name="Enabled" Type="bool" Value="True"/>
-											<Property Name="Max" Type="Real64" Value="5"/>
-											<Property Name="Min" Type="Real64" Value="-5"/>
+											<Property Name="Max" Type="Real64" Value="200"/>
+											<Property Name="Min" Type="Real64" Value="-200"/>
 										</PropertyList>
 									</Modifier>
 								</ModifierInfo>
@@ -169,6 +169,297 @@
 						</Sound>
 					</ChildrenList>
 				</RandomSequenceContainer>
+				<RandomSequenceContainer Name="Eat_Tea" ID="{28F59A58-E926-4600-B2A8-15F68FBB93C2}" ShortID="1006008461">
+					<PropertyList>
+						<Property Name="Pitch" Type="int32">
+							<ModifierList>
+								<ModifierInfo>
+									<Modifier Name="" ID="{70F8DC55-35E4-4A62-94C4-5B75848F336B}">
+										<PropertyList>
+											<Property Name="Enabled" Type="bool" Value="True"/>
+											<Property Name="Max" Type="Real64" Value="100"/>
+											<Property Name="Min" Type="Real64" Value="-50"/>
+										</PropertyList>
+									</Modifier>
+								</ModifierInfo>
+							</ModifierList>
+						</Property>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{07D68A21-32EE-4120-A2D1-11DBA5EACF5D}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{6550DA42-7E97-4239-A323-68E7C0764A42}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<Sound Name="Eat_Tea_1" ID="{5C400557-9FD6-4135-9AA2-583B19802EDB}" ShortID="944019964">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{07D68A21-32EE-4120-A2D1-11DBA5EACF5D}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{6550DA42-7E97-4239-A323-68E7C0764A42}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Eat_Tea_1" ID="{C1EDC640-F64C-4F7A-B1A5-42D3CA3C1516}">
+									<Language>SFX</Language>
+									<AudioFile>Eat_Tea_1.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="662486985"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="Eat_Tea_1" ID="{C1EDC640-F64C-4F7A-B1A5-42D3CA3C1516}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="Eat_Tea_2" ID="{202F6CB6-5428-47B2-AFD1-A4AEC5B6A335}" ShortID="459869771">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{07D68A21-32EE-4120-A2D1-11DBA5EACF5D}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{6550DA42-7E97-4239-A323-68E7C0764A42}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Eat_Tea_2" ID="{441BBA15-BD31-450F-9046-03524940E0B8}">
+									<Language>SFX</Language>
+									<AudioFile>Eat_Tea_2.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="975656669"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="Eat_Tea_2" ID="{441BBA15-BD31-450F-9046-03524940E0B8}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+					</ChildrenList>
+				</RandomSequenceContainer>
+				<Sound Name="Ambience_Cafe" ID="{B406470B-371D-4DD0-93BB-7CE211F21638}" ShortID="730040032">
+					<ReferenceList>
+						<Reference Name="Attenuation">
+							<ObjectRef Name="Ambience_Cafe" ID="{DFD52424-87B8-41B2-A47A-59656F2C09B5}" WorkUnitID="{DFE6B7E6-A491-430A-8505-E1B7683BE52F}"/>
+						</Reference>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{07D68A21-32EE-4120-A2D1-11DBA5EACF5D}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{6550DA42-7E97-4239-A323-68E7C0764A42}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="Ambience_Cafe" ID="{7744AD50-AA1D-478D-BB36-9D27A61DDC65}">
+							<Language>SFX</Language>
+							<AudioFile>Ambience_Cafe.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="608936965"/>
+							</MediaIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="Ambience_Cafe" ID="{7744AD50-AA1D-478D-BB36-9D27A61DDC65}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="Bike_Bell" ID="{9D10F12A-46E6-4205-B836-7BB6EFBD44B2}" ShortID="786108245">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{07D68A21-32EE-4120-A2D1-11DBA5EACF5D}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{6550DA42-7E97-4239-A323-68E7C0764A42}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="Bike_Bell" ID="{79D1CABD-2689-4833-8566-A67614964E1A}">
+							<Language>SFX</Language>
+							<AudioFile>Bike_Bell.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="226845634"/>
+							</MediaIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="Bike_Bell" ID="{79D1CABD-2689-4833-8566-A67614964E1A}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="Ambience_Birds" ID="{4BEA1889-BA14-4B62-9ED9-91E4A2110915}" ShortID="122167463">
+					<ReferenceList>
+						<Reference Name="Attenuation">
+							<ObjectRef Name="Ambience_Birds" ID="{69C0642D-1FEA-40E9-9028-C465E4D0C476}" WorkUnitID="{DFE6B7E6-A491-430A-8505-E1B7683BE52F}"/>
+						</Reference>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{07D68A21-32EE-4120-A2D1-11DBA5EACF5D}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{6550DA42-7E97-4239-A323-68E7C0764A42}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="Ambience_Birds" ID="{D186B7EC-2E0F-41D9-A9AB-AB4525DE35C7}">
+							<Language>SFX</Language>
+							<AudioFile>Ambience_Birds.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="1021939505"/>
+							</MediaIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="Ambience_Birds" ID="{D186B7EC-2E0F-41D9-A9AB-AB4525DE35C7}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="Ambience_Wind" ID="{8860BDD7-E32A-4AF9-9435-29EB1B422F1F}" ShortID="113159387">
+					<ReferenceList>
+						<Reference Name="Attenuation">
+							<ObjectRef Name="Ambience_Wind" ID="{8B0FDCBA-AAFA-4A44-948C-6D4D8ED7BC33}" WorkUnitID="{DFE6B7E6-A491-430A-8505-E1B7683BE52F}"/>
+						</Reference>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{07D68A21-32EE-4120-A2D1-11DBA5EACF5D}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{6550DA42-7E97-4239-A323-68E7C0764A42}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="Ambience_Wind" ID="{B31E4B34-D1F1-4423-80BC-814DF3DAB0C3}">
+							<Language>SFX</Language>
+							<AudioFile>Ambience_Wind.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="399424105"/>
+							</MediaIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="Ambience_Wind" ID="{B31E4B34-D1F1-4423-80BC-814DF3DAB0C3}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<SwitchContainer Name="Bike_Surface" ID="{82C3D514-7D4C-4C06-A679-BE158750A1AB}" ShortID="848352209">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{07D68A21-32EE-4120-A2D1-11DBA5EACF5D}"/>
+						</Reference>
+						<Reference Name="DefaultSwitchOrState">
+							<ObjectRef Name="Road" ID="{7DB2254D-00ED-48C0-B502-D79674375292}" WorkUnitID="{07A517EC-452D-49A1-96B3-C8E41B115E6D}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{6550DA42-7E97-4239-A323-68E7C0764A42}"/>
+						</Reference>
+						<Reference Name="SwitchGroupOrStateGroup">
+							<ObjectRef Name="Bike_Surface" ID="{544FD381-F683-4001-9E4A-A56CD6331F8B}" WorkUnitID="{07A517EC-452D-49A1-96B3-C8E41B115E6D}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<Sound Name="Bike_Grass" ID="{DB994268-DDC9-4DE8-A4AD-7B9E62BB47B4}" ShortID="156629625">
+							<PropertyList>
+								<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{07D68A21-32EE-4120-A2D1-11DBA5EACF5D}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{6550DA42-7E97-4239-A323-68E7C0764A42}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Bike_Grass" ID="{0D67510C-9D5E-4B93-BCE3-23BB4289F97E}">
+									<Language>SFX</Language>
+									<AudioFile>Bike_Grass.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="416168121"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="Bike_Grass" ID="{0D67510C-9D5E-4B93-BCE3-23BB4289F97E}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="Bike_Road" ID="{20BFA23A-7295-4440-8F69-6126249D55FF}" ShortID="524254264">
+							<PropertyList>
+								<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{07D68A21-32EE-4120-A2D1-11DBA5EACF5D}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{6550DA42-7E97-4239-A323-68E7C0764A42}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Bike_Road" ID="{97DCB9EE-6CD1-40CF-A3C6-1470B8D57B46}">
+									<Language>SFX</Language>
+									<AudioFile>Bike_Road.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="539590533"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="Bike_Road" ID="{97DCB9EE-6CD1-40CF-A3C6-1470B8D57B46}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="Bike_Sand" ID="{667C3D74-D7BF-47F8-87A8-9052F57EDF9A}" ShortID="313172688">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{07D68A21-32EE-4120-A2D1-11DBA5EACF5D}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{6550DA42-7E97-4239-A323-68E7C0764A42}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Bike_Sand" ID="{0A769F63-F1FB-4C83-BC5C-E596E46CEA08}">
+									<Language>SFX</Language>
+									<AudioFile>Bike_Sand.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="553968660"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="Bike_Sand" ID="{0A769F63-F1FB-4C83-BC5C-E596E46CEA08}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+					</ChildrenList>
+					<GroupingInfo>
+						<GroupingBehaviorList>
+							<GroupingBehavior>
+								<ItemRef Name="Bike_Road" ID="{20BFA23A-7295-4440-8F69-6126249D55FF}"/>
+							</GroupingBehavior>
+							<GroupingBehavior>
+								<ItemRef Name="Bike_Grass" ID="{DB994268-DDC9-4DE8-A4AD-7B9E62BB47B4}"/>
+							</GroupingBehavior>
+							<GroupingBehavior>
+								<ItemRef Name="Bike_Sand" ID="{667C3D74-D7BF-47F8-87A8-9052F57EDF9A}"/>
+							</GroupingBehavior>
+						</GroupingBehaviorList>
+						<GroupingList>
+							<Grouping>
+								<SwitchRef Name="Road" ID="{7DB2254D-00ED-48C0-B502-D79674375292}"/>
+								<ItemList>
+									<ItemRef Name="Bike_Road" ID="{20BFA23A-7295-4440-8F69-6126249D55FF}"/>
+								</ItemList>
+							</Grouping>
+							<Grouping>
+								<SwitchRef Name="Sand" ID="{2B2D13AC-11B4-45A8-87A7-283737DBBFFF}"/>
+								<ItemList>
+									<ItemRef Name="Bike_Sand" ID="{667C3D74-D7BF-47F8-87A8-9052F57EDF9A}"/>
+								</ItemList>
+							</Grouping>
+							<Grouping>
+								<SwitchRef Name="Grass" ID="{D11530F2-3562-415E-AFA7-646BC0588E22}"/>
+								<ItemList>
+									<ItemRef Name="Bike_Grass" ID="{DB994268-DDC9-4DE8-A4AD-7B9E62BB47B4}"/>
+								</ItemList>
+							</Grouping>
+						</GroupingList>
+					</GroupingInfo>
+				</SwitchContainer>
 			</ChildrenList>
 		</WorkUnit>
 	</AudioObjects>

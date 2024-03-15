@@ -152,7 +152,7 @@ public class PlayerGame : MonoBehaviour
         //Order half eaten
         if(bitesLeft<2)
         {
-            if(Random.Range(0.0f, 1.0f)<0.5f)   //Random number 1 in 2
+            if(UnityEngine.Random.Range(0.0f, 1.0f)<0.5f)   //Random number 1 in 2
             {
                 Debug.Log("Order half eaten");
                 strikes--;

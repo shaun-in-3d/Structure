@@ -252,7 +252,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -1, y: 0, z: 0}
-  m_LocalScale: {x: 30.000002, y: 30.000002, z: 30.000002}
+  m_LocalScale: {x: 50, y: 50, z: 50}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 5860132158965138237}
@@ -488,6 +488,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5860132158965138237}
+  - component: {fileID: 6433643865023970364}
   m_Layer: 0
   m_Name: ParticleTrailParent
   m_TagString: Untagged
@@ -511,6 +512,19 @@ Transform:
   - {fileID: 2897434342638748478}
   m_Father: {fileID: 5779996996949387870}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6433643865023970364
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6898105257376721400}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5af204a054eafe144af793d445b5b76b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  particles: {fileID: 0}
 --- !u!1 &7029357435764387031
 GameObject:
   m_ObjectHideFlags: 0
@@ -540,13 +554,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7029357435764387031}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.38268343, y: 0, z: 0, w: 0.92387956}
-  m_LocalPosition: {x: 0, y: 1.41, z: -1.44}
+  m_LocalRotation: {x: 0.31912684, y: -0, z: -0, w: 0.94771206}
+  m_LocalPosition: {x: 0, y: 1.1, z: -1.1}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 5779996996949387870}
-  m_LocalEulerAnglesHint: {x: 45, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 37.22, y: 0, z: 0}
 --- !u!20 &1813562755868367953
 Camera:
   m_ObjectHideFlags: 0
@@ -557,7 +571,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0.9150943, g: 0.46186364, b: 0.63079536, a: 0}
+  m_BackGroundColor: {r: 0.38431376, g: 0.49803925, b: 0.42352945, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -580,7 +594,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 21.5
+  field of view: 60
   orthographic: 0
   orthographic size: 5
   m_Depth: -1
@@ -764,13 +778,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9202543347658659853}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: 0.99721366, z: 0.0745993, w: 0}
-  m_LocalPosition: {x: 0, y: 0, z: -12.06999}
+  m_LocalRotation: {x: -0.074595734, y: 0, z: 0, w: 0.9972139}
+  m_LocalPosition: {x: 0, y: -4.5, z: 4.99}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 5860132158965138237}
-  m_LocalEulerAnglesHint: {x: -8.556, y: 180, z: 0}
+  m_LocalEulerAnglesHint: {x: -8.556, y: 0, z: 0}
 --- !u!198 &4502183613121239958
 ParticleSystem:
   m_ObjectHideFlags: 0
@@ -1349,7 +1363,7 @@ ParticleSystem:
     gravityModifier:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0
+      scalar: -0.5
       minScalar: 0
       maxCurve:
         serializedVersion: 2

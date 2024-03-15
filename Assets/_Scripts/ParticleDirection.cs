@@ -48,14 +48,13 @@ public class ParticleDirection : MonoBehaviour
 
     void AdjustParticleEmissionBasedOnSpeed()
     {
-        // Calculate the player's speed
+
+
         float speed = rb.velocity.magnitude;
 
-        // Get the emission module from the particle system
         var emission = particles.emission;
 
-        // Adjust the rate of emission based on speed. You may need to scale the speed to get a suitable rate.
-        // For example, this could be a direct assignment, or you might use a formula to adjust the rate more subtly.
-        emission.rateOverTime = speed * 10; // Example scaling factor, adjust based on your game's needs
+     
+        emission.rateOverTime = speed*0.1f; // Example scaling factor, adjust based on your game's needs
     }
 }

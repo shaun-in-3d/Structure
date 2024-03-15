@@ -4,7 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
-
+using UnityEngine.UIElements;
 
 public enum teaTypes
 {
@@ -13,7 +13,6 @@ public enum teaTypes
     green,
     english,
     iced,
-    chai,
     microwave
 };
 
@@ -37,7 +36,7 @@ public struct House
 
 public struct TeaShop
 {
-    public Vector2 position;
+    public GameObject shop;
     public teaTypes type;
 };
 
@@ -51,9 +50,17 @@ public struct Delivery
 
 public class DeliveryManager : MonoBehaviour
 {
-    private const int teaTypeCount = 6;
+    private const int teaTypeCount = 5;
     public List<House> houses = new List<House>();
-    private List<TeaShop> shops = new List<TeaShop>();
+    public List<TeaShop> shops = new List<TeaShop>();
+
+    private void Update()
+    {
+        if(!Player.tickTimer(Time.deltaTime))   //Update task timer
+        {
+            Player.failOrder(createDelivery(120, Player.getCurrentDelivery().location));
+        }
+    }
 
     [SerializeField] private PlayerGame Player;
     public void addHouse(House house)   //called in house construction. So it can be delivered to
@@ -71,12 +78,23 @@ public class DeliveryManager : MonoBehaviour
         addHouse(h);
     }
 
-    public House GetHouse(int index) 
+    public void addTeaShop(TeaShop shop)
     {
-        return houses[index];
+        shops.Add(shop);
     }
 
-    public House getHouseFunction(int index)
+    public void addTeaShop(GameObject shop,teaTypes type)
+    {
+        TeaShop s=new TeaShop();
+        s.shop = shop;
+        s.type = type;
+
+        addTeaShop(s);
+    }
+
+
+
+    public House GetHouse(int index) 
     {
         return houses[index];
     }
@@ -84,6 +102,20 @@ public class DeliveryManager : MonoBehaviour
     public TeaShop GetTeaShop(int index)
     {
         return shops[index];
+    }
+
+    public TeaShop GetTeaShop(teaTypes type)   //return the teashop that sells a type of tea, or null if one doesn't exist
+    {
+        for (int i=0;i<shops.Count;++i)
+        {
+            if (shops[i].type == type)
+            {
+                return shops[i];
+            }
+        }
+
+        Debug.Log("Error");
+        return shops[0];
     }
 
     public Delivery createDelivery(float time, House? houseToAvoid)  //Create new delivery struct and return it, time is passed in to allow it to become either fixed, or calculated
@@ -102,12 +134,6 @@ public class DeliveryManager : MonoBehaviour
         d.type = (teaTypes)(UnityEngine.Random.Range(0, teaTypeCount)+1);
         d.time = time;
 
-        Debug.Log("House count"+houses.Count);
-
-        //d.location.script.enableHouse();
-
-        Debug.Log("Deliver tea "+d.type+" to house");
-
         return d;
     }
 
@@ -118,7 +144,6 @@ public class DeliveryManager : MonoBehaviour
 
     public void completeDelivery()  //Complete delivery, to be called in house
     {
-        const float time = 120; //Delay
-        Player.completeOrder(createDelivery(time,Player.getCurrentDelivery().location));
+        Player.completeOrder(createDelivery(Player.timeForDelivery, Player.getCurrentDelivery().location));
     }
 }

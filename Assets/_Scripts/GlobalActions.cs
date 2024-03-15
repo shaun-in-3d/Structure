@@ -5,7 +5,7 @@ using UnityEngine.UI; // Required for working with UI components like Image
 
 public class GlobalActions : MonoBehaviour
 {
-    public string gameSceneName = "GameScene";
+    public string gameSceneName = "Level_02";
 
     [SerializeField] 
     private CanvasGroup settingsMenu; // Reference to the Image component

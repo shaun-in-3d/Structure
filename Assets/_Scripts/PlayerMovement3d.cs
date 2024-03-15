@@ -11,10 +11,13 @@ public class PlayerMovement3D : MonoBehaviour
     private Vector3 moveInput;
     private PlayerInput playerInput;
 
+    private PlayerGame playerGame;  //Used for getting speed decrease
+
     private void Awake()
     {
         rb = GetComponent<Rigidbody>();
         playerInput = GetComponent<PlayerInput>();
+        playerGame=GetComponent<PlayerGame>();  
     }
 
     private void OnEnable()
@@ -44,7 +47,7 @@ public class PlayerMovement3D : MonoBehaviour
     private void Move()
     {
         // Apply a force to move the player
-        Vector3 force = moveInput * moveSpeed * forceMultiplier;
+        Vector3 force = moveInput * moveSpeed * forceMultiplier * playerGame.getSpeedDecrease();
         rb.AddForce(force, ForceMode.Force);
         
     }

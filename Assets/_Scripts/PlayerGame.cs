@@ -11,6 +11,8 @@ public class PlayerGame : MonoBehaviour
     [SerializeField] private DeliveryManager manager;
     [SerializeField] private DirectionArrow arrow;
 
+    [SerializeField] public float timeForDelivery = 120;
+
     private Delivery currentOrder;
     private teaTypes teaCarrying = teaTypes.none;
     private int bitesLeft=0;
@@ -18,6 +20,8 @@ public class PlayerGame : MonoBehaviour
     [SerializeField] private float staminaDrainRate=0.02f;
     [SerializeField] private float staminaRegainRate = 0.05f;
     [SerializeField] private float eatingStaminaRegain = 0.4f;
+    [SerializeField] private float minStaminaSpeed = 0.1f;
+
     private float stamina = 1;
 
     private PlayerInput playerInput;
@@ -28,7 +32,7 @@ public class PlayerGame : MonoBehaviour
     private void Awake()
     {
         rb=GetComponent<Rigidbody>();
-        currentOrder = manager.createDelivery(5,null);
+        currentOrder = manager.createDelivery(timeForDelivery,null);
         currentOrder.location.script.enableHouse();
         playerInput=GetComponent<PlayerInput>();
 
@@ -51,7 +55,7 @@ public class PlayerGame : MonoBehaviour
         //Update stamina
         if(rb.velocity.sqrMagnitude<=0.02f)
         {
-            stamina += staminaRegainRate * Time.deltaTime;
+            stamina += Mathf.Min(staminaRegainRate * Time.deltaTime,1);
         }
         else
         {
@@ -83,9 +87,9 @@ public class PlayerGame : MonoBehaviour
         {
             return;
         }
-
         bitesLeft -= 1;
         stamina += eatingStaminaRegain;
+        if(stamina>1){ stamina = 1; }   //Ensure stamina doesn't go above 1
         if(bitesLeft==0)
         {
             teaCarrying= teaTypes.none; 
@@ -153,6 +157,7 @@ public class PlayerGame : MonoBehaviour
             return false;
         }
         teaCarrying = type;
+        bitesLeft = 2;
         return true;
     }
 
@@ -160,5 +165,11 @@ public class PlayerGame : MonoBehaviour
     {
         //TODO: Add code for losing
         Debug.Log("You lose!");
+    }
+
+    //Get speed decrease from stamina
+    public float getSpeedDecrease()
+    {
+        return Mathf.Min(Mathf.Sqrt(stamina)+minStaminaSpeed, 1.0f);
     }
 }

@@ -35,7 +35,8 @@ public class PlayerMovement3D : MonoBehaviour
     public void OnMovement(InputAction.CallbackContext context)
     {
         Vector2 input = context.ReadValue<Vector2>();
-        moveInput = new Vector3(input.x, 0f, input.y); // Convert 2D input to 3D
+        moveInput.x = input.x;
+        moveInput.z = input.y;  
         GetComponent<PlayerSpriteSwitch>().ChangeDirection(moveInput);
     }
 

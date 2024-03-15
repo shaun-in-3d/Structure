@@ -53,7 +53,7 @@
 				</SwitchGroup>
 			</SwitchGroups>
 		</SoundBank>
-		<SoundBank Id="3161908922" Type="User" Language="SFX" Hash="{1ED5A905-F9A9-5C14-77E6-4CF06999030B}">
+		<SoundBank Id="3161908922" Type="User" Language="SFX" Hash="{62DCFC2A-F0E3-AAF4-7E3F-F3045F8D1C54}">
 			<ShortName>Main</ShortName>
 			<Path>Main.bnk</Path>
 			<Media>
@@ -129,7 +129,7 @@
 						<MediaRef Id="608936965"/>
 					</MediaRefs>
 				</Event>
-				<Event Id="156328838" Name="Ambience_Wind" MaxAttenuation="100" DurationType="OneShot" DurationMin="70.48" DurationMax="70.48">
+				<Event Id="156328838" Name="Ambience_Wind" MaxAttenuation="200" DurationType="OneShot" DurationMin="70.48" DurationMax="70.48">
 					<MediaRefs>
 						<MediaRef Id="399424105"/>
 					</MediaRefs>
@@ -201,5 +201,5 @@
 			</SwitchGroups>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{C6D4C251-4A1A-5110-A997-C4335D4E59CF}</FileHash>
+	<FileHash>{2A38D929-D869-4D0D-AAFB-400D40D9D70F}</FileHash>
 </SoundBanksInfo>

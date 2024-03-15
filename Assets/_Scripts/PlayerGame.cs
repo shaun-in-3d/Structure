@@ -1,23 +1,32 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Net.WebSockets;
 using Unity.PlasticSCM.Editor.WebApi;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.Profiling;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class PlayerGame : MonoBehaviour
 {
     [SerializeField] private int strikes = 3;
     [SerializeField] private DeliveryManager manager;
     [SerializeField] private DirectionArrow arrow;
+    [SerializeField] private StaminaBar staminaBar;
 
     [SerializeField] public float timeForDelivery = 120;
+
+    [SerializeField] private HighScoreTransfer highScore;
+    private int teasDelivered;
+    private int teasEaten;
 
     private Delivery currentOrder;
     private teaTypes teaCarrying = teaTypes.none;
     private int bitesLeft=0;
 
-    [SerializeField] private float staminaDrainRate=0.02f;
+    [SerializeField] private float staminaDrainRate = 0.02f;
     [SerializeField] private float staminaRegainRate = 0.05f;
     [SerializeField] private float eatingStaminaRegain = 0.4f;
     [SerializeField] private float minStaminaSpeed = 0.1f;
@@ -26,7 +35,38 @@ public class PlayerGame : MonoBehaviour
 
     private PlayerInput playerInput;
 
-    Rigidbody rb;
+    private Rigidbody rb;
+
+    public string[] teaNames = new string[5] { "Boba tea", "Green tea", "English tea", "Iced tea", "Microwave tea" };
+
+    [SerializeField] private Image teaImageDisplay; // Assign this in the Unity Editor
+
+    public void DisplayTeaImage(teaTypes teaType, int spriteNumber)
+    {
+        // Check if the teaType is none, and if so, set the Image to display no image
+        if (teaType == teaTypes.none)
+        {
+            if (teaImageDisplay != null)
+            {
+                teaImageDisplay.sprite = null; // Set to no image
+            }
+        }
+        else
+        {
+            // Cast the teaTypes enum to ImageName since they have the same underlying values
+            ImageName imageName = (ImageName)Enum.Parse(typeof(ImageName), teaType.ToString());
+
+            // Get the sprite from TeaImageManager
+            Sprite spriteToDisplay = TeaImageManager.Instance.GetSprite(imageName, spriteNumber);
+
+            // Set the sprite to the Image UI component
+            if (spriteToDisplay != null && teaImageDisplay != null)
+            {
+                teaImageDisplay.sprite = spriteToDisplay;
+            }
+        }
+    }
+
 
 
     private void Awake()
@@ -37,7 +77,12 @@ public class PlayerGame : MonoBehaviour
         playerInput=GetComponent<PlayerInput>();
 
         playerInput.actions["Eat"].Enable();    //Add eat tea to the eat function
-        playerInput.actions["Eat"].started += eatTea;   
+        playerInput.actions["Eat"].started += eatTea;
+
+        DialogueManager.Instance.ShowMessage("ExampleCharacter", "Order of " + teaNames[(int)currentOrder.type-1] + " to go to house");
+
+        teasDelivered = 0;
+        teasEaten = 0;
     }
 
     private void Update()
@@ -66,7 +111,8 @@ public class PlayerGame : MonoBehaviour
         {
             loseFunction(); 
         }
-        
+
+        staminaBar.setStamina(stamina);
     }
 
     public Delivery getCurrentDelivery()
@@ -83,17 +129,19 @@ public class PlayerGame : MonoBehaviour
 
     public void eatTea(InputAction.CallbackContext context)
     {
-        if(teaCarrying==teaTypes.none)  //No tea to eat
+        if(teaCarrying==teaTypes.none || bitesLeft == 1)  //No tea to eat
         {
             return;
         }
         bitesLeft -= 1;
+        teasEaten++;
         stamina += eatingStaminaRegain;
         if(stamina>1){ stamina = 1; }   //Ensure stamina doesn't go above 1
         if(bitesLeft==0)
         {
             teaCarrying= teaTypes.none; 
         }
+        DisplayTeaImage(teaCarrying, 2 - bitesLeft);
     }
 
 
@@ -101,24 +149,31 @@ public class PlayerGame : MonoBehaviour
     {
         //Increment score
 
-        //Check for if player should be penalized (order wrong, eaten)
+        //Order half eaten
+        if(bitesLeft<2)
+        {
+            if(Random.Range(0.0f, 1.0f)<0.5f)   //Random number 1 in 2
+            {
+                Debug.Log("Order half eaten");
+                strikes--;
+            }
+        }
 
-        if(currentOrder.type!=teaCarrying)  //Carrying the wrong tea
+        else if(currentOrder.type!=teaCarrying)  //Carrying the wrong tea
         {
             Debug.Log("Wrong order");
             //TODO: Add code for NPC telling player they're order is wrong
 
             strikes--;
-
-            if(strikes==0)
-            {
-                loseFunction();
-            }
-
         }
         else
         {
-            Debug.Log("Right order");
+            teasDelivered++;
+        }
+
+        if (strikes == 0)
+        {
+            loseFunction();
         }
 
         updateOrder(newOrder);
@@ -140,6 +195,7 @@ public class PlayerGame : MonoBehaviour
 
     private void updateOrder(Delivery newOrder)
     {
+        
         if(currentOrder.location.script!=null)
         {
             currentOrder.location.script.disableHouse();
@@ -148,6 +204,7 @@ public class PlayerGame : MonoBehaviour
         newOrder.location.script.enableHouse();
         currentOrder = newOrder;
         arrow.targetObject = newOrder.location.script.gameObject.transform;
+        DialogueManager.Instance.ShowMessage("ExampleCharacter","Order of "+teaNames[(int)newOrder.type-1]+" to go to house");
     }
 
     public bool takeTea(teaTypes type)
@@ -158,13 +215,17 @@ public class PlayerGame : MonoBehaviour
         }
         teaCarrying = type;
         bitesLeft = 2;
+        DisplayTeaImage(teaCarrying, 2 - bitesLeft);
         return true;
     }
 
     public void loseFunction()
     {
-        //TODO: Add code for losing
-        Debug.Log("You lose!");
+        dataToTransfer d = new dataToTransfer();
+        d.teaEaten = teasEaten;
+        d.deliveries = teasDelivered;
+        highScore.setData(d);
+        SceneManager.LoadScene("Lose Scene");
     }
 
     //Get speed decrease from stamina

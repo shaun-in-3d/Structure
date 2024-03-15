@@ -14,26 +14,16 @@ PluginImporter:
   - first:
       Any: 
     second:
-<<<<<<< HEAD
-      enabled: 1
-=======
       enabled: 0
->>>>>>> main
       settings: {}
   - first:
       Editor: Editor
     second:
-<<<<<<< HEAD
-      enabled: 0
-      settings:
-        DefaultValueInitialized: true
-=======
       enabled: 1
       settings:
         CPU: x86_64
         DefaultValueInitialized: true
         OS: Windows
->>>>>>> main
   userData: 
   assetBundleName: 
   assetBundleVariant: 

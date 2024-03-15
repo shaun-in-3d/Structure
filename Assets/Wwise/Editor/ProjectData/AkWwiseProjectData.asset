@@ -83,7 +83,7 @@ MonoBehaviour:
     ParentPath: SoundBanks\Default Work Unit
     guid: 2c362c84d91f004ca5888a0792948b6a
     GuidInternal: 
-    m_lastTime: -8584911011664024764
+    m_lastTime: -8584910978221271601
     List:
     - name: Main
       guid: d110db08507ccf4ca3617e5d4c990329
@@ -127,7 +127,7 @@ MonoBehaviour:
         ObjectType: 3
         guid: 555bd8db737cd84b9324edd8288838b6
       Path: Events\Default Work Unit\Ambience_Birds
-      maxAttenuation: 0
+      maxAttenuation: 45
       maxDuration: 7.824458
       minDuration: 7.824458
     - name: Ambience_Cafe
@@ -144,7 +144,7 @@ MonoBehaviour:
         ObjectType: 3
         guid: 87ea1239b8d61243b48664a2fb125880
       Path: Events\Default Work Unit\Ambience_Cafe
-      maxAttenuation: 0
+      maxAttenuation: 70
       maxDuration: 10.31875
       minDuration: 10.31875
     - name: Ambience_Wind
@@ -161,7 +161,7 @@ MonoBehaviour:
         ObjectType: 3
         guid: 95836734cd0e11439f16cc22b2d2f03f
       Path: Events\Default Work Unit\Ambience_Wind
-      maxAttenuation: 0
+      maxAttenuation: 100
       maxDuration: 70.48
       minDuration: 70.48
     - name: Bike_Bell
@@ -196,8 +196,8 @@ MonoBehaviour:
         guid: 5f7f0351bc972a45837720ca2a666e76
       Path: Events\Default Work Unit\Bike_Surface
       maxAttenuation: 0
-      maxDuration: -1
-      minDuration: -1
+      maxDuration: Infinity
+      minDuration: 4.9792914
     - name: Cancel
       guid: aa0b84541c4b58428f43474ff6e02734
       id: 2760337059
@@ -247,8 +247,8 @@ MonoBehaviour:
         guid: 9e129a0c41dcdb43a1ad73d8ebf0d286
       Path: Events\Default Work Unit\Eat_Tea
       maxAttenuation: 0
-      maxDuration: -1
-      minDuration: -1
+      maxDuration: 0.8783379
+      minDuration: 0.7752354
     - name: Game_Loss
       guid: a357d00f93cb7f4db442f7a75e596757
       id: 3425053579
@@ -405,7 +405,7 @@ MonoBehaviour:
     ParentPath: Switches\Default Work Unit
     guid: ec17a5072d45a14996b3c8e41b115e6d
     GuidInternal: 
-    m_lastTime: -8584911007365212354
+    m_lastTime: -8584910978877046546
     List:
     - name: Bike_Surface
       guid: 81d34f5483f601409e4aa56cd6331f8b
@@ -454,6 +454,22 @@ MonoBehaviour:
         - ElementName: Road
           ObjectType: 10
           guid: 4d25b27ded00c048b502d79674375292
+      - name: Sand
+        guid: ac132d2bb411a84587a7283737dbbfff
+        id: 803837735
+        PathAndIcons:
+        - ElementName: Switches
+          ObjectType: 5
+          guid: 00000000000000000000000000000000
+        - ElementName: Default Work Unit
+          ObjectType: 12
+          guid: ec17a5072d45a14996b3c8e41b115e6d
+        - ElementName: Bike_Surface
+          ObjectType: 11
+          guid: 81d34f5483f601409e4aa56cd6331f8b
+        - ElementName: Sand
+          ObjectType: 10
+          guid: ac132d2bb411a84587a7283737dbbfff
       ValueGuids: []
       ValueIcons: []
       valuesInternal: []

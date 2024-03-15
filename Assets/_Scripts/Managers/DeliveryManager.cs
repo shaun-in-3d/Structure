@@ -4,7 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
-
+using UnityEngine.UIElements;
 
 public enum teaTypes
 {
@@ -55,6 +55,14 @@ public class DeliveryManager : MonoBehaviour
     public List<House> houses = new List<House>();
     private List<TeaShop> shops = new List<TeaShop>();
 
+    private void Update()
+    {
+        if(!Player.tickTimer(Time.deltaTime))   //Update task timer
+        {
+            Player.failOrder(createDelivery(120, Player.getCurrentDelivery().location));
+        }
+    }
+
     [SerializeField] private PlayerGame Player;
     public void addHouse(House house)   //called in house construction. So it can be delivered to
     {
@@ -101,10 +109,6 @@ public class DeliveryManager : MonoBehaviour
         d.location = houses[num];
         d.type = (teaTypes)(UnityEngine.Random.Range(0, teaTypeCount)+1);
         d.time = time;
-
-        Debug.Log("House count"+houses.Count);
-
-        //d.location.script.enableHouse();
 
         Debug.Log("Deliver tea "+d.type+" to house");
 

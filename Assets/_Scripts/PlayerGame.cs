@@ -15,13 +15,19 @@ public class PlayerGame : MonoBehaviour
 
     private void Awake()
     {
-        currentOrder = manager.createDelivery(120,null);
+        currentOrder = manager.createDelivery(5,null);
         currentOrder.location.script.enableHouse();
     }
 
     public Delivery getCurrentDelivery()
     {
         return currentOrder;
+    }
+
+    public bool tickTimer(float deltaTime)  //Reduce the timer on the current order and return whether they have time left
+    {
+        currentOrder.time -= deltaTime;
+        return currentOrder.time > 0;
     }
     
 
@@ -79,6 +85,7 @@ public class PlayerGame : MonoBehaviour
             //TODO: Add code for losing
         }
 
+        Debug.Log("Uh oh");
         currentOrder.location.script.disableHouse();
         newOrder.location.script.enableHouse();
         currentOrder = newOrder;

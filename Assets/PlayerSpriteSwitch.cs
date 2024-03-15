@@ -37,7 +37,7 @@ public class PlayerSpriteSwitch : MonoBehaviour
         spriteRenderer.sprite = sprites[index];
     }
 
-    private int DirectionToIndex(Vector2 dir)
+    public int DirectionToIndex(Vector2 dir)
 {
     if (dir.magnitude < 0.01f)
         return 0; // Return idle sprite if there's practically no movement.

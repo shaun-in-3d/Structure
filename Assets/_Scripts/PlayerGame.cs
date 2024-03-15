@@ -5,6 +5,7 @@ using Unity.PlasticSCM.Editor.WebApi;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.Profiling;
+using UnityEngine.SceneManagement;
 
 public class PlayerGame : MonoBehaviour
 {
@@ -178,8 +179,7 @@ public class PlayerGame : MonoBehaviour
 
     public void loseFunction()
     {
-        //TODO: Add code for losing
-        Debug.Log("You lose!");
+        SceneManager.LoadScene("Lose Scene");
     }
 
     //Get speed decrease from stamina

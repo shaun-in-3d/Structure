@@ -28,9 +28,9 @@ public class PlayerGame : MonoBehaviour
 
     private PlayerInput playerInput;
 
-    Rigidbody rb;
+    private Rigidbody rb;
 
-    string[] teaNames = new string[5] { "Boba tea", "Green tea", "English tea", "Iced tea", "Microwave tea" };
+    public string[] teaNames = new string[5] { "Boba tea", "Green tea", "English tea", "Iced tea", "Microwave tea" };
 
     private void Awake()
     {
@@ -42,7 +42,7 @@ public class PlayerGame : MonoBehaviour
         playerInput.actions["Eat"].Enable();    //Add eat tea to the eat function
         playerInput.actions["Eat"].started += eatTea;
 
-        DialogueManager.Instance.ShowMessage("ExampleCharacter", "Order of " + teaNames[(int)currentOrder.type] + " to go to house");
+        DialogueManager.Instance.ShowMessage("ExampleCharacter", "Order of " + teaNames[(int)currentOrder.type-1] + " to go to house");
     }
 
     private void Update()
@@ -107,24 +107,31 @@ public class PlayerGame : MonoBehaviour
     {
         //Increment score
 
-        //Check for if player should be penalized (order wrong, eaten)
+        //Order half eaten
+        if(bitesLeft<2)
+        {
+            if(Random.Range(0.0f, 1.0f)<0.5f)   //Random number 1 in 2
+            {
+                Debug.Log("Order half eaten");
+                strikes--;
+            }
+        }
 
-        if(currentOrder.type!=teaCarrying)  //Carrying the wrong tea
+        else if(currentOrder.type!=teaCarrying)  //Carrying the wrong tea
         {
             Debug.Log("Wrong order");
             //TODO: Add code for NPC telling player they're order is wrong
 
             strikes--;
-
-            if(strikes==0)
-            {
-                loseFunction();
-            }
-
         }
         else
         {
             Debug.Log("Right order");
+        }
+
+        if (strikes == 0)
+        {
+            loseFunction();
         }
 
         updateOrder(newOrder);
@@ -155,7 +162,7 @@ public class PlayerGame : MonoBehaviour
         newOrder.location.script.enableHouse();
         currentOrder = newOrder;
         arrow.targetObject = newOrder.location.script.gameObject.transform;
-        DialogueManager.Instance.ShowMessage("ExampleCharacter","Order of "+teaNames[(int)newOrder.type]+" to go to house");
+        DialogueManager.Instance.ShowMessage("ExampleCharacter","Order of "+teaNames[(int)newOrder.type-1]+" to go to house");
     }
 
     public bool takeTea(teaTypes type)
